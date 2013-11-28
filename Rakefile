@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-DatabasedotcomDemo::Application.load_tasks
+ReadyInvoice::Application.load_tasks

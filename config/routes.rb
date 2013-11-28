@@ -1,4 +1,4 @@
-DatabasedotcomDemo::Application.routes.draw do
+ReadyInvoice::Application.routes.draw do
   root :to => "home#index"
   resources :users, :only => [:index, :show, :edit, :update ]
   match '/auth/:provider/callback' => 'sessions#create'
