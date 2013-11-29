@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     def edit
     @user = User.find(params[:id])
   end
-  
+
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
@@ -20,8 +20,13 @@ class UsersController < ApplicationController
   end
 
 
-def show
+  def show
     @user = User.find(params[:id])
+  end
+
+
+  def user_params
+    params.require(:user).permit(:provider, :uid, :name, :email, :role_ids)
   end
 
 end

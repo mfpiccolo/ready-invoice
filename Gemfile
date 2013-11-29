@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
-
-gem 'rails', '3.2.12'
+gem 'rails', '4.0.0'
 gem 'sqlite3'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails',   '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
+  gem 'uglifier'
 end
 
 # Salesforce Related Gems:
@@ -32,10 +31,15 @@ gem 'omniauth-salesforce' # 'cause if you're going to go to the work
 # as well be able to authenticate against salesforce as well right?
 
 #Nice to have gems:
-gem 'activeadmin' # Nice, Quick, stupid simple dsl and framework
+gem 'activeadmin', github: 'gregbell/active_admin'
+# Nice, Quick, stupid simple dsl and framework
 # for "admin" sections in your rails app. Use this, for instance,
 # to dynamically adjust which properties or fields your
 # databasedotcom-rails model's pull / push to optimize speed!
+
+# PDF generation
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
 
 #Sys Admin type Gems:
 gem 'foreman'

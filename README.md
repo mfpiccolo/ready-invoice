@@ -1,3 +1,7 @@
+Run Locally:
+Follow these steps: https://gist.github.com/trcarden/3295935
+thin start --ssl -p3001 --ssl-verify --ssl-key-file server.key --ssl-cert-file server.crt
+
 Databasedotcom Demo
 ========================
 
@@ -7,7 +11,7 @@ Demo Credentials:
 
 1. Why am I giving these out? -- Well, the proof is in the pudding. You need to be able to see that it really does interact with salesforce.
 2. it's a demo org. ... what're you gonna do with it?
-3. I hate reading an exmaple where it all code until you get to <crutial bit here> 
+3. I hate reading an exmaple where it all code until you get to <crutial bit here>
 4. I'm very sleepy.
 
 User Name: db@21demo.com
@@ -34,7 +38,7 @@ ________________________
 License:
 This is licensed under the Do something good for humanity license.
 Do whatever you want with the code, but also do something good for humanity (not neccesarily with this code). Buy a cop a coffe. Give a homeless guy a 5ver.
-Adopt a pet.  Whatever. Do something good. Your concious is the only thing that'll chase you down. 
+Adopt a pet.  Whatever. Do something good. Your concious is the only thing that'll chase you down.
 
 ________________________
 

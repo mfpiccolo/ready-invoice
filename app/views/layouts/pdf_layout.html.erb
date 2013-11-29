@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head><style>article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}audio[controls],canvas,video{display:inline-block}[hidden],audio{display:none}mark{background:#FF0;color:#000}</style>
+    <meta charset="utf-8">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="license" href="http://www.opensource.org/licenses/mit-license/">
+    <script src="script.js"></script>
+    <%= wicked_pdf_stylesheet_link_tag "documents" %>
+    <%#= wicked_pdf_image_tag %>
+    <%= wicked_pdf_javascript_include_tag "invoice" %>
+  </head>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <%= yield %>
+  </body>
+</html>
