@@ -8,6 +8,8 @@ group :assets do
   gem 'uglifier'
 end
 
+gem "restforce"
+
 # Salesforce Related Gems:
 gem 'databasedotcom-oauth2' #basic rest access to salesforce.com.
 # alternative gem interface: https://github.com/ejholmes/restforce
@@ -78,7 +80,7 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 
 #Debugging -- because life is too short:
 gem "better_errors", ">= 0.6.0", :group => :development
-gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
+gem "binding_of_caller", ">= 0.7.1", :group => :development
 gem 'pry', :group => [:development, :test], :require => 'pry' # Use pry or else. #srsly.
 # Pry is an INSANELY powerful debugging shell.
 #

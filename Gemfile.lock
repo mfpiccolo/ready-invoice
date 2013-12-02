@@ -116,6 +116,8 @@ GEM
       railties (>= 3.0.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
@@ -213,6 +215,11 @@ GEM
       polyamorous (~> 0.6.0)
     responders (1.0.0)
       railties (>= 3.2, < 5)
+    restforce (1.4.2)
+      faraday (~> 0.8.4)
+      faraday_middleware (>= 0.8.8)
+      hashie (>= 1.2.0, < 2.1)
+      json (>= 1.7.5, < 1.9.0)
     rolify (3.2.0)
     rspec-core (2.14.7)
     rspec-expectations (2.14.4)
@@ -298,6 +305,7 @@ DEPENDENCIES
   pry
   quiet_assets (>= 1.0.1)
   rails (= 4.0.0)
+  restforce
   rolify (>= 3.2.0)
   rspec-rails (>= 2.12.2)
   sass-rails (~> 4.0.0)
