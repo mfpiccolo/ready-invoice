@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_one :salesforce
+
   rolify
   # attr_accessible :role_ids, :as => :admin
   # attr_accessible :provider, :uid, :name, :email

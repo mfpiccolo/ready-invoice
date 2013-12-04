@@ -28,7 +28,7 @@ class InvoicesController < ApplicationController
         render :template => 'invoices/pdf.html.erb',
                :layout => 'pdf_layout'
       end
-
+      binding.pry
       format.pdf do
         @example_text = "some text"
         render :pdf => "file_name",
