@@ -1,23 +1,26 @@
-<h1>Listing invoices</h1>
+<div class="row collapse">
+  <h1>Listing Invoices</h1>
 
-<table class="table table-bordered table-hover table-condensed">
-  <tr>
-    <th>Actions</th>
-    <th>Invoice Name</th>
-    <th>Total</th>
-    <th>Status</th>
-  </tr>
+  <table class="table" class="responsive">
+    <tr>
+      <th>Actions</th>
+      <th>Invoice Name</th>
+      <th>Total</th>
+      <th>Status</th>
+    </tr>
 
-<% @invoices.each do |invoice| %>
-  <tr class="<%= (invoice.Name == 'Closed Won') ? "success" : "warning"%> ">
-    <td><%= link_to 'Show', "/invoices/#{invoice.to_param}" %> <%= link_to 'Edit', "/invoices/#{invoice.to_param}/edit" %> <%= link_to 'Destroy', "/invoices/#{invoice.to_param}", method: :delete, data: { confirm: 'Are you sure?' } %> <%= link_to 'Create PDF document', invoice_path(invoice, format: :pdf) %> <%= link_to 'Edit PDF document', invoice_path(invoice) %></td>
-    <td><%= invoice.Name %></td>
-    <td><%= invoice.Invoice_Total__c %></td>
-    <td><%= invoice.Status__c %></td>
-  </tr>
-<% end %>
-</table>
+  <% @invoices.each do |invoice| %>
+    <tr class="<%= (invoice.Name == 'Closed Won') ? "success" : "warning"%> ">
+      <td><%= link_to 'Show', "/invoices/#{invoice.to_param}" %> <%= link_to 'Edit', "/invoices/#{invoice.to_param}/edit" %> <%= link_to 'Destroy', "/invoices/#{invoice.to_param}", method: :delete, data: { confirm: 'Are you sure?' } %> <%= link_to 'Create PDF document', invoice_path(invoice, format: :pdf) %> <%= link_to 'Edit PDF document', invoice_path(invoice) %></td>
+      <td><%= invoice.Name %></td>
+      <td><%= invoice.Invoice_Total__c %></td>
+      <td><%= invoice.Status__c %></td>
+    </tr>
+  <% end %>
+  </table>
 
-<br />
+  <br />
 
-<%= link_to 'New Invoice', new_invoice_path %>
+  <%= link_to 'New Invoice', new_invoice_path %>
+
+</div>
