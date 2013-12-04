@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
-//= require_tree .
+//= require foundation
+//= require invoice
+//= require home
+
+$(function(){ $(document).foundation(); });

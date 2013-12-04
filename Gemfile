@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 gem 'sqlite3'
 
-group :assets do
-  gem 'sass-rails',   '~> 4.0.0'
-  gem 'coffee-rails', '~> 4.0.0'
-  gem 'uglifier'
-end
+gem 'sass-rails',   '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'uglifier'
+gem 'foundation-rails'
+gem "font-awesome-rails"
 
 gem "restforce"
 
@@ -70,7 +70,6 @@ gem 'pg', :group => :production # You are going to Heroku this right?
 
 #General Development gems not part of rails.
 gem 'jquery-rails' #Jquery or die.
-gem "bootstrap-sass", ">= 2.3.0.0" #Bootstrap, It really whips the Zurbs ass.
 gem "sendgrid", ">= 1.0.1" #Because email just won't die.
 gem "simple_form", ">= 2.0.4" #just ... yeah.
 
