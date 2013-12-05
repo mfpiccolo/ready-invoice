@@ -1,13 +1,15 @@
 class InvoicesController < ApplicationController
   include Databasedotcom::Rails::Controller
 
-  before_action :set_client
-  before_action :find_invoice, only: [:edit, :show, :update, :destroy]
+  before_action :set_pg_constants, only: [:show, :index]
+  before_action :find_pg_invoice, only: [:show]
+  before_action :find_sf_invoice, only: [:edit, :show, :update, :destroy]
+  before_action :set_client, only: [:new, :create, :update, :destroy]
 
   # GET /invoices
   # GET /invoices.json
   def index
-    @invoices = Invoice__c.all
+    @invoices = PG::Invoice__c.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,17 +20,17 @@ class InvoicesController < ApplicationController
   # GET /invoices/1
   # GET /invoices/1.json
   def show
-    dbdc_client.materialize("User")
-    @user = SF::User.find(@invoice.CreatedById)
+    # dbdc_client.materialize("User")
+    # @user = SF::User.find(@invoice.CreatedById)
 
-    @line_items = @rf_client.query("SELECT Name, Id, (SELECT Name, Id, Quantity__c, Unit_Price__c, Line_Item_Total__c, Merchandise__c FROM Line_Items__r) FROM Invoice__c WHERE Name = 'INV-0000'")
+    @line_items = PG::Line_Item__c.where("Invoice__c" => @invoice.Id )
 
     respond_to do |format|
       format.html do
         render :template => 'invoices/pdf.html.erb',
                :layout => 'pdf_layout'
       end
-      binding.pry
+
       format.pdf do
         @example_text = "some text"
         render :pdf => "file_name",
@@ -125,7 +127,15 @@ class InvoicesController < ApplicationController
       :instance_url  => session[:omniauthUrl]
   end
 
-  def find_invoice
+  def set_pg_constants
+    current_user.salesforce.sf_models.each { |m| m.reload }
+  end
+
+  def find_sf_invoice
     @invoice = Invoice__c.find(params[:id])
+  end
+
+  def find_pg_invoice
+    @invoice = PG::Invoice__c.find(params[:id])
   end
 end

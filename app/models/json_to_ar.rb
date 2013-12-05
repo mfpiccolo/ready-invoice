@@ -15,4 +15,8 @@ class JsonToAR
     end
   end
 
+  def to_param
+    self.try(:Id)
+  end
+
 end

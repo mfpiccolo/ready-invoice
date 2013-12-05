@@ -22,6 +22,6 @@ class SfModel < ActiveRecord::Base
   private
 
   def setup_model
-    SF.const_set(model_name, self)
+    PG.const_set(model_name, self)
   end
 end
