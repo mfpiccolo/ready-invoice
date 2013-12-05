@@ -25,7 +25,7 @@ namespace :salesforce do
         data << { model => records }
       end
 
-      salesforce.update_attributes(data: { "sf_collections" => data })
+      salesforce.update_attributes(data: { "sf_collections" => data } )
     end
   end
 end
