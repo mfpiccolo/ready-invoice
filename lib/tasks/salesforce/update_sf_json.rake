@@ -26,6 +26,12 @@ namespace :salesforce do
       end
 
       salesforce.update_attributes(data: { "sf_collections" => data } )
+
+      salesforce.data["sf_collections"].each do |hash|
+        hash.each_pair do |model, data|
+          sf_model = salesforce.sf_models.create(model_name: model, records: { model => data })
+        end
+      end
     end
   end
 end

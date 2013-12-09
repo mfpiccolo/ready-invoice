@@ -24,6 +24,8 @@ class InvoicesController < ApplicationController
     # @user = SF::User.find(@invoice.CreatedById)
 
     @line_items = PG::Line_Item__c.where("Invoice__c" => @invoice.Id )
+    merchandise_ids = @line_items.map(&:Merchandise__c)
+    @merchandise = PG::Merchandise__c.where("Id" => merchandise_ids)
 
     respond_to do |format|
       format.html do

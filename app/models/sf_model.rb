@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: sf_models
+#
+#  id            :integer          not null, primary key
+#  salesforce_id :integer
+#  model_name    :string(255)
+#  records       :json
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 class SfModel < ActiveRecord::Base
   belongs_to :salesforce
 
