@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails', '4.0.0'
-gem 'sqlite3'
+gem "pg"
 
 gem 'sass-rails',   '~> 4.0.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -66,7 +66,6 @@ gem "email_spec", ">= 1.4.0", :group => :test
 
 #Db Maintenance, Access and Utilities:
 gem "database_cleaner", ">= 0.9.1", :group => :test
-gem 'pg', :group => :production # You are going to Heroku this right?
 
 #General Development gems not part of rails.
 gem 'jquery-rails' #Jquery or die.
@@ -76,6 +75,8 @@ gem "simple_form", ">= 2.0.4" #just ... yeah.
 #Who doesn't love the asset pipeline?
 #Who hasn't thought "STFU Asset Pipeline" in development?
 gem "quiet_assets", ">= 1.0.1", :group => :development
+
+gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 
 #Debugging -- because life is too short:
 gem "better_errors", ">= 0.6.0", :group => :development
