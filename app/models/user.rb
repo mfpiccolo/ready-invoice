@@ -30,4 +30,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  # Overwrites setter because controller might send blanks in array
+  def model_names=(array)
+    array.delete("")
+    write_attribute(:model_names, array)
+  end
+
 end

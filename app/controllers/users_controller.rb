@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
-  before_filter :correct_user?, :except => [:index]
+  before_action :authenticate_user!
+  before_action :correct_user?, :except => [:index]
 
   def index
     @users = User.all
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
+    if @user.update_attributes(user_params)
       redirect_to @user
     else
       render :edit
@@ -25,8 +25,9 @@ class UsersController < ApplicationController
   end
 
 
-  def user_params
-    params.require(:user).permit(:provider, :uid, :name, :email, :role_ids)
-  end
+  private
 
+  def user_params
+    params.require(:user).permit(:provider, :uid, :name, :email, :role_ids, model_names: [])
+  end
 end
