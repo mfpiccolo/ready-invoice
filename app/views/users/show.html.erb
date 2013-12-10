@@ -1,3 +1,11 @@
 <h3>User</h3>
 <p>User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+<% if @user.model_names.present? %>
+  <p>Models:
+    <% @user.model_names.each do |model_name| %>
+      <%= model_name %></br>
+    <% end %>
+  </p>
+<% end %>
+
