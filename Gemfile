@@ -9,6 +9,7 @@ gem 'foundation-rails'
 gem "font-awesome-rails"
 
 gem "restforce"
+gem "metaforce", path: "~/code/mfpiccolo/metaforce"
 
 # Salesforce Related Gems:
 gem 'databasedotcom-oauth2' #basic rest access to salesforce.com.
@@ -53,7 +54,7 @@ gem 'thin', '>= 1.5.0' # http server -- my favorite part of thin
 
 #Authentication, Authorization and Identity Management:
 gem "omniauth", ">= 1.1.3"
-gem "omniauth-github"
+# gem "omniauth-github"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
 gem 'devise'

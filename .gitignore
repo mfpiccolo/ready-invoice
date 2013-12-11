@@ -28,6 +28,10 @@ db/*.sqlite3
 .redcar/
 .sass-cache
 /config/config.yml
+/config/metaforce.yml
+/config/restforce.yml
+/config/bulk_api.yml
+/config/databasedotcom.yml
 /coverage.data
 /coverage/
 /db/*.javadb/
