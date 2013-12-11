@@ -115,18 +115,18 @@ class InvoicesController < ApplicationController
     # can be pulled from (and in this case are) the omni-auth auth hash
     # setup as we login. This ensures that if user A logs in to org FOO
     # he/she can only see records that they have access to.
-    @config = {:token => session[:omniauthToken],
-              :instance_url => session[:omniauthUrl],
-              :refresh_token => session[:omniauthRefresh],
-              :version => "27.0"}
-    dbdc_client= Databasedotcom::Client.new
-    dbdc_client.authenticate(@config)
-    self.dbdc_client= dbdc_client
-    dbdc_client.sobject_module = SF
+    # @config = {:token => session[:omniauthToken],
+    #           :instance_url => session[:omniauthUrl],
+    #           :refresh_token => session[:omniauthRefresh],
+    #           :version => "27.0"}
+    # dbdc_client= Databasedotcom::Client.new
+    # dbdc_client.authenticate(@config)
+    # self.dbdc_client= dbdc_client
+    # dbdc_client.sobject_module = SF
 
-    @rf_client = Restforce.new :oauth_token => session[:omniauthToken],
-      :refresh_token => session[:omniauthRefresh],
-      :instance_url  => session[:omniauthUrl]
+    # @rf_client = Restforce.new :oauth_token => session[:omniauthToken],
+    #   :refresh_token => session[:omniauthRefresh],
+    #   :instance_url  => session[:omniauthUrl]
   end
 
   def set_pg_constants

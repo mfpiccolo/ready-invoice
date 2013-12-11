@@ -14,6 +14,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       redirect_to @user
+      client = Client.create(client: :metaforce)
+      client.create(:custom_field, fullName: "#{@user.invoice_api_name}.PDF_Link__c", type: "Url", label: "PDF Link").on_complete { |job| puts "Link field created." }.perform
     else
       render :edit
     end
