@@ -3,21 +3,6 @@ class OpportunitiesController < ApplicationController
 
   before_filter :set_client
 
-  def set_client
-    # databasedotcom-rails (hereafter dbdc-r) requires the presesence of
-    # rails_root/config/databasedotcom.yml but the actual auth params
-    # can be pulled from (and in this case are) the omni-auth auth hash
-    # setup as we login. This ensures that if user A logs in to org FOO
-    # he/she can only see records that they have access to.
-    @config = {:token => session[:omniauthToken],
-              :instance_url => session[:omniauthUrl],
-              :refresh_token => session[:omniauthRefresh],
-              :version => "27.0"}
-    dbdc_client= Databasedotcom::Client.new
-    dbdc_client.authenticate(@config)
-    self.dbdc_client= dbdc_client
-  end
-
   # GET /opportunities
   # GET /opportunities.json
   def index
@@ -98,5 +83,25 @@ class OpportunitiesController < ApplicationController
       format.html { redirect_to opportunities_url }
       format.json { head :no_content }
     end
+  end
+
+
+  private
+
+  def set_client
+    # databasedotcom-rails (hereafter dbdc-r) requires the presesence of
+    # rails_root/config/databasedotcom.yml but the actual auth params
+    # can be pulled from (and in this case are) the omni-auth auth hash
+    # setup as we login. This ensures that if user A logs in to org FOO
+    # he/she can only see records that they have access to.
+    # @config = {:token => session[:omniauthToken],
+    #           :instance_url => session[:omniauthUrl],
+    #           :refresh_token => session[:omniauthRefresh],
+    #           :version => "27.0"}
+    # dbdc_client= Databasedotcom::Client.new
+    # dbdc_client.authenticate(@config)
+    # self.dbdc_client= dbdc_client
+
+    dbdc_client = Client.create(client: :databasedotcom)
   end
 end
