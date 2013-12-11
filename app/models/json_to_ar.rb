@@ -19,4 +19,9 @@ class JsonToAR
     self.try(:Id)
   end
 
+  def link
+    # TODO make this check env for host
+    "https://localhost:3001/invoices/#{self.to_param}"
+  end
+
 end
