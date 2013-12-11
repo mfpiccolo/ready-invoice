@@ -36,4 +36,7 @@ class User < ActiveRecord::Base
     write_attribute(:model_names, array)
   end
 
+  def invoice_api_name
+    model_names.first
+  end
 end
