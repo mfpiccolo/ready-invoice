@@ -1,10 +1,10 @@
-namespace :salesforce do
-  task update_sf_json: :environment do
+namespace :sf do
+  task update: :environment do
     User.all.each do |user|
       # Create a salesforce client here.
       # Requires users salesforce login information i.e. username and pass
-      client = Client.create
-      client = Client.create(client: :databasedotcom)
+      dbdc_client = Client.create({ wrapper: :databasedotcom, sf_credentials: user.sf_credentials })
+      bulk_client = Client.create({ wrapper: :salesforce_bulk, sf_credentials: user.sf_credentials })
 
       data = []
 
@@ -18,7 +18,7 @@ namespace :salesforce do
 
         records = []
 
-        client.materialize model
+        dbdc_client.materialize model
         "SF::#{model}".constantize.all.each do |record|
           records << record.attributes
         end
@@ -41,10 +41,17 @@ namespace :salesforce do
       invoices = user.salesforce.sf_models.first.all
       sf_invoice_constant = "SF::#{user.invoice_api_name}".constantize
 
+      records_to_update = Array.new
+
       invoices.each do |invoice|
-        sf_invoice = sf_invoice_constant.find(invoice.Id)
-        sf_invoice.update_attributes("PDF_Link__c" => invoice.link)
+        updated_account = Hash["Id" => invoice.Id, "PDF_Link__c" => invoice.link] # Nearly identical to an insert, but we need to pass the salesforce id.
+        records_to_update.push(updated_account)
+
+
+        # sf_invoice = sf_invoice_constant.find(invoice.Id)
+        # sf_invoice.update_attributes("PDF_Link__c" => invoice.link)
       end
+      bulk_client.update(user.invoice_api_name, records_to_update)
     end
   end
 end
