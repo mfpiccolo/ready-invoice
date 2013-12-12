@@ -4,6 +4,15 @@
     <%= f.label :email %>
     <%= f.text_field :email %>
 
+    <%= f.label :username, "Salesforce Username" %>
+    <%= f.text_field :username %>
+
+    <%= f.label :password, "Salesforce Password" %>
+    <%= f.password_field :password, value: @user.password %>
+
+    <%= f.label :security_token, "Salesforce Security Token" %>
+    <%= f.password_field :security_token, value: @user.security_token %>
+
     <%= f.label "invoice_model_name", "Invoice object API Name" %>
     <%= text_field_tag "user[model_names][]", (@user.model_names[0] if @user.model_names.present?), placeholder: 'Enter Invoice object API Name', id: "user_invoice_model_name" %>
     <%= f.label "other_model_name1", "Other object API Name" %>

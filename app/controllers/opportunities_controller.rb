@@ -102,6 +102,7 @@ class OpportunitiesController < ApplicationController
     # dbdc_client.authenticate(@config)
     # self.dbdc_client= dbdc_client
 
-    dbdc_client = Client.create(client: :databasedotcom)
+    # TODO needs to pass in user credentials.  See update.rake
+    dbdc_client = Client.create(wrapper: :databasedotcom)
   end
 end
