@@ -1,0 +1,13 @@
+development: &nonproduction
+  username: "mfpiccolo@gmail.com"
+  password: "sac93!ronlMtOX4GbBiNSSLvOdI3PGdsur"
+
+test:
+  <<: *nonproduction
+
+staging:
+  <<: *nonproduction
+
+production:
+  username: "mfpiccolo@gmail.com"
+  password: "sac93!ronlMtOX4GbBiNSSLvOdI3PGdsur"

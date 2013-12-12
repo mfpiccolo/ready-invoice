@@ -8,6 +8,12 @@ gem 'uglifier'
 gem 'foundation-rails'
 gem "font-awesome-rails"
 
+gem "attr_encrypted"
+
+gem "awesome_print"
+
+# gem "salesforce_bulk_api", :git => "git@github.com:StepsAway/salesforce_bulk_api.git"
+gem "salesforce_bulk"
 gem "restforce"
 gem "metaforce", path: "~/code/mfpiccolo/metaforce"
 
