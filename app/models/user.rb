@@ -15,6 +15,8 @@
 class User < ActiveRecord::Base
   has_one :salesforce
 
+  attr_encrypted :username, :password, :security_token, :key => "a secret key", :prefix => 'sf_', :suffix => '_crypted'
+
   rolify
   # attr_accessible :role_ids, :as => :admin
   # attr_accessible :provider, :uid, :name, :email
@@ -38,5 +40,9 @@ class User < ActiveRecord::Base
 
   def invoice_api_name
     model_names.first
+  end
+
+  def sf_credentials
+    { username: username, password: password, security_token: security_token }
   end
 end
