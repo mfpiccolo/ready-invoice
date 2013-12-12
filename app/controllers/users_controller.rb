@@ -14,8 +14,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       redirect_to @user
-      # TODO Needs to pass in user sf credentials.  See update.rake
-      client = Client.create(wrapper: :metaforce)
+      client = Client.create({ wrapper: :metaforce, sf_credentials: @user.sf_credentials })
       client.create(:custom_field, fullName: "#{@user.invoice_api_name}.PDF_Link__c", type: "Url", label: "PDF Link").on_complete { |job| puts "Link field created." }.perform
     else
       render :edit
