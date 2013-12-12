@@ -39,17 +39,12 @@ namespace :sf do
       # update the link by records
       user.reload
       invoices = user.salesforce.sf_models.first.all
-      sf_invoice_constant = "SF::#{user.invoice_api_name}".constantize
 
       records_to_update = Array.new
 
       invoices.each do |invoice|
         updated_account = Hash["Id" => invoice.Id, "PDF_Link__c" => invoice.link] # Nearly identical to an insert, but we need to pass the salesforce id.
         records_to_update.push(updated_account)
-
-
-        # sf_invoice = sf_invoice_constant.find(invoice.Id)
-        # sf_invoice.update_attributes("PDF_Link__c" => invoice.link)
       end
       bulk_client.update(user.invoice_api_name, records_to_update)
     end

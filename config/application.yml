@@ -1,25 +1,6 @@
-# Add account credentials and API keys here.
-# See http://railsapps.github.com/rails-environment-variables.html
-# This file should be listed in .gitignore to keep your settings secret!
-# Each entry sets a local environment variable and overrides ENV variables in the Unix shell.
-# For example, setting:
-# GMAIL_USERNAME: Your_Gmail_Username
-# makes 'Your_Gmail_Username' available as ENV["GMAIL_USERNAME"]
-# Add application configuration variables here, as shown below.
-#
-# You didn't really think I was going to give you ALL the credentials did you?
-SENDGRID_USERNAME: Your_Username
-SENDGRID_PASSWORD: Your_Password
-ADMIN_NAME: First User
-ADMIN_EMAIL: user@example.com
-ADMIN_PASSWORD: changeme
-OMNIAUTH_PROVIDER_KEY: Your_OmniAuth_Provider_Key
-OMNIAUTH_PROVIDER_SECRET: Your_OmniAuth_Provider_Secret
 ROLES: [admin, user, VIP]
 DATABASEDOTCOM_HOST: login.salesforce.com
 DATABASEDOTCOM_CLIENT_SECRET: 2723513671397209288
 DATABASEDOTCOM_CLIENT_ID: 3MVG9A2kN3Bn17hvFwA0jJYrgAYRETsvZq0QNgJbEzijoUylgdu2vK6EoULwkkRgStSGHjHiQ0NZAGDgCiM7Z
-#sobject_module: SFDC_Models
 DATABASEDOTCOM_DEBUGGING: true
-# DATABASEDOTCOM_USERNAME:
-# DATABASEDOTCOM_PASSWORD:
+
