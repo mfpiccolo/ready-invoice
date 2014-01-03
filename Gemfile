@@ -66,6 +66,7 @@ gem "rolify", ">= 3.2.0"
 gem 'devise'
 
 #Testing, Where in a highly opinionated list of Gems is included:
+gem 'guard-rspec', group: :development
 gem 'rspec-rails', '>= 2.12.2', :group => [:development, :test]
 gem 'capybara', '>= 2.0.2', :group => :test
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
