@@ -8,7 +8,14 @@ gem 'uglifier'
 gem 'foundation-rails'
 gem "font-awesome-rails"
 
+gem "attr_encrypted"
+
+gem "awesome_print"
+
+# gem "salesforce_bulk_api", :git => "git@github.com:StepsAway/salesforce_bulk_api.git"
+gem "salesforce_bulk"
 gem "restforce"
+gem "metaforce", path: "~/code/mfpiccolo/metaforce"
 
 # Salesforce Related Gems:
 gem 'databasedotcom-oauth2' #basic rest access to salesforce.com.
@@ -53,12 +60,13 @@ gem 'thin', '>= 1.5.0' # http server -- my favorite part of thin
 
 #Authentication, Authorization and Identity Management:
 gem "omniauth", ">= 1.1.3"
-gem "omniauth-github"
+# gem "omniauth-github"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
 gem 'devise'
 
 #Testing, Where in a highly opinionated list of Gems is included:
+gem 'guard-rspec', group: :development
 gem 'rspec-rails', '>= 2.12.2', :group => [:development, :test]
 gem 'capybara', '>= 2.0.2', :group => :test
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]

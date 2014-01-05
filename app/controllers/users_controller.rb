@@ -14,6 +14,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       redirect_to @user
+      client = Client.create({ wrapper: :metaforce, sf_credentials: @user.sf_credentials })
+      client.create(:custom_field, fullName: "#{@user.invoice_api_name}.PDF_Link__c", type: "Url", label: "PDF Link").on_complete { |job| puts "Link field created." }.perform
     else
       render :edit
     end
@@ -28,6 +30,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:provider, :uid, :name, :email, :role_ids, model_names: [])
+    params.require(:user).permit(:provider, :uid, :name, :email, :role_ids, :username, :password, :security_token, model_names: [])
   end
 end

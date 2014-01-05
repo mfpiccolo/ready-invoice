@@ -16,7 +16,7 @@ class SfModel < ActiveRecord::Base
   after_initialize :setup_model
 
   def all
-    records[model_name].map { |record| JsonToAR.new(record) }
+    records[model_name].map { |record| JsonToAR.new(record, model_name) }
   end
 
   def find( param )
