@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'rails', '4.0.0'
+gem 'rails', git: "git@github.com:rails/rails.git", branch: "4-0-stable"
 gem "pg"
 
 gem 'sass-rails',   '~> 4.0.0'
