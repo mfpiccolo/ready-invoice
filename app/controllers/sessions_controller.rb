@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
 
     # unless the oldest record has been updated in the last hour
     unless current_user.sf_object.oldest_last_checked > Time.now.advance(hours: 1)
-      SfSyncher.(current_user)
+      SfSynch.(current_user)
     end
   end
 

@@ -3,7 +3,7 @@ namespace :sf do
     Time.zone = "Pacific Time (US & Canada)"
 
     User.all.each do |user|
-      SfSyncher.(user)
+      SfSynch.(user)
     end
   end
 end

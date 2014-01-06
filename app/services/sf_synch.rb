@@ -1,4 +1,4 @@
-class SfSyncher
+class SfSynch
   include SoftService
 
   attr_reader :dbdc_client, :bulk_client
