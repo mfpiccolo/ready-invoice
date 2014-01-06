@@ -8,6 +8,8 @@ gem 'uglifier'
 gem 'foundation-rails'
 gem "font-awesome-rails"
 
+gem "soft_service", git: "git@github.com:elskwid/soft_service.git"
+
 gem "attr_encrypted"
 
 gem "awesome_print"

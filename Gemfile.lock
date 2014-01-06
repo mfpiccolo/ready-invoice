@@ -25,6 +25,12 @@ GIT
       sass-rails
 
 GIT
+  remote: git@github.com:elskwid/soft_service.git
+  revision: c8f4232ac97d01eb6cea1f9bec7d7270ec8e01cb
+  specs:
+    soft_service (0.1)
+
+GIT
   remote: git@github.com:noeticpenguin/databasedotcom-rails.git
   revision: a0b11678661ee0e5144f2a75af48ac2761a8cf9d
   specs:
@@ -381,6 +387,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sendgrid (>= 1.0.1)
   simple_form (>= 2.0.4)
+  soft_service!
   thin (>= 1.5.0)
   uglifier
   wicked_pdf
