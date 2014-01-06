@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     session[:omniauthToken]   = auth[:credentials][:token]
     session[:omniauthUrl]     = auth[:credentials][:instance_url]
     session[:omniauthRefresh] = auth[:credentials][:refresh_token]
-    user = User.where(:provider => auth['provider'], 
+    user = User.where(:provider => auth['provider'],
                       :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
     user.refresh_token = auth[:credentials][:refresh_token]
     user.save
@@ -22,6 +22,10 @@ class SessionsController < ApplicationController
       redirect_to root_url, :notice => 'Signed in!'
     end
 
+    # unless the oldest record has been updated in the last hour
+    unless current_user.sf_object.oldest_last_checked > Time.now.advance(hours: 1)
+      SfSyncher.(current_user)
+    end
   end
 
   def destroy
