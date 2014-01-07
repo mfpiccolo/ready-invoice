@@ -27,8 +27,8 @@ class SfObject < ActiveRecord::Base
   after_initialize :set_sf_attributes
   after_initialize :define_sf_scopes
 
-  def self.oldest_last_checked
-    order("last_checked").first
+  def self.oldest_last_checked_time
+    order("last_checked").first.last_checked
   end
 
   def to_param

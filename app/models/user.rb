@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
 
   attr_encrypted :username, :password, :security_token, :key => "a secret key", :prefix => 'sf_', :suffix => '_crypted'
 
+  # TODO Fix rolify problem.  Guard won't run with rolify
   rolify
   # attr_accessible :role_ids, :as => :admin
   # attr_accessible :provider, :uid, :name, :email

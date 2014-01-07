@@ -23,9 +23,7 @@ class SessionsController < ApplicationController
     end
 
     # unless the oldest record has been updated in the last hour
-    unless current_user.sf_object.oldest_last_checked > Time.now.advance(hours: 1)
-      SfSynch.(current_user)
-    end
+    SfSynch.update_if_needed_for(current_user)
   end
 
   def destroy

@@ -16,8 +16,8 @@ class SfSynch
   def set_clients
     # Create a salesforce client here.
     # Requires users salesforce login information i.e. username and pass
-    @dbdc_client = Client.create({ wrapper: :databasedotcom, sf_credentials: user.sf_credentials })
-    @bulk_client = Client.create({ wrapper: :salesforce_bulk, sf_credentials: user.sf_credentials })
+    @dbdc_client = Client.create(user, :databasedotcom)
+    @bulk_client = Client.create(user, :salesforce_bulk)
   end
 
   def update_pg_from_sf
@@ -29,7 +29,7 @@ class SfSynch
       records = []
 
       dbdc_client.materialize model
-      "SF::#{model}".constantize.all.each do |record|
+      "DBDC::#{model}".constantize.all.each do |record|
         # if record.LastModifiedDate.to_date > Date.today.advance(days: -1)
           object = user.sf_objects.find_or_create_by(oid: record.Id)
           object.update_attributes(
@@ -62,8 +62,21 @@ class SfSynch
       related_model_names = record.instance_variables.map {|e| e.to_s.gsub("@", "") } & user.model_names
       related_model_names.each do |name|
         child = SfObject.find_by_oid(record.send(name.to_sym))
-        SfObjectRelation.create!(parent_id: record.id, parent_type: record.otype, child_id: child.id, child_type: child.otype)
+        unless SfObjectRelation.where(parent_id: record.id, child_id: child.id).present?
+          SfObjectRelation.create!(
+            parent_id: record.id,
+            parent_type: record.otype,
+            child_id: child.id,
+            child_type: child.otype
+            )
+        end
       end
+    end
+  end
+
+  def self.update_if_needed_for(user)
+    if user.sf_objects.oldest_last_checked_time > Time.now.advance(hours: 1)
+      call
     end
   end
 end

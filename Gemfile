@@ -74,28 +74,17 @@ gem 'capybara', '>= 2.0.2', :group => :test
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
 gem "email_spec", ">= 1.4.0", :group => :test
 
-#Db Maintenance, Access and Utilities:
 gem "database_cleaner", ">= 0.9.1", :group => :test
 
-#General Development gems not part of rails.
 gem 'jquery-rails' #Jquery or die.
 gem "sendgrid", ">= 1.0.1" #Because email just won't die.
 gem "simple_form", ">= 2.0.4" #just ... yeah.
 
-#Who doesn't love the asset pipeline?
-#Who hasn't thought "STFU Asset Pipeline" in development?
 gem "quiet_assets", ">= 1.0.1", :group => :development
 
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 
-#Debugging -- because life is too short:
 gem "better_errors", ">= 0.6.0", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development
 gem 'pry', :group => [:development, :test], :require => 'pry' # Use pry or else. #srsly.
-# Pry is an INSANELY powerful debugging shell.
-#
-# GO HERE and Find out why: http://railscasts.com/episodes/280-pry-with-rails
-#
-# Now you're set to drop:
-# binding.pry
-# wherever you need to debug code live...
+

@@ -41,6 +41,7 @@ class InvoicesController < ApplicationController
   private
 
   def find_pg_invoice
-    @invoice = current_user.sf_objects.find_by_oid(params[:id])
+    @invoice = FindInvoice.(params[:id], current_user)
+    # @invoice = current_user.sf_objects.find_by_oid(params[:id])
   end
 end
