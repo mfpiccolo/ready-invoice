@@ -89,6 +89,7 @@ group :test do
   gem "capybara",                "~> 2.1.0"
   gem "launchy",                 "~> 2.3.0"
   gem "minitest-capybara",       "~> 0.4.1"
+  gem "minispec-metadata"
   gem "capybara_minitest_spec",  "~> 1.0.0"
   gem "poltergeist",             "~> 1.3.0"
   gem "database_cleaner",        "~> 1.0.1"

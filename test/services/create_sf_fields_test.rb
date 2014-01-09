@@ -1,6 +1,6 @@
 require 'test_helper'
 
-describe CreateSfFields do
+describe CreateSfFields, vcr: true do
 
   describe "#call" do
     describe "with user passed" do
