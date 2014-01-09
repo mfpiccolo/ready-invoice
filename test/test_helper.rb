@@ -26,6 +26,7 @@ class DummyHelperClass < ActionView::Base
   include Rails.application.routes.url_helpers
 end
 
+# Dynamically creates the directory structure and yml files for VCR
 class MiniTest::Spec
   before :each do |example|
     test_info = example.class.name.split("::").map {|e| e.underscore}
