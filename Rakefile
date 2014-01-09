@@ -5,3 +5,5 @@
 require File.expand_path('../config/application', __FILE__)
 
 ReadyInvoice::Application.load_tasks
+
+Dir["./lib/tasks/**/*.rake"].sort.each { |t| load t }

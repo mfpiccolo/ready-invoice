@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/Soap/u/29.0
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="urn:partner.soap.sforce.com"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="urn:partner.soap.sforce.com"
+        xmlns:ins1="urn:sobject.partner.soap.sforce.com" xmlns:ins2="urn:fault.partner.soap.sforce.com"><env:Body><ins0:login><ins0:username
+        xsi:nil="true"/><ins0:password></ins0:password></ins0:login></env:Body></env:Envelope>
+    headers:
+      Soapaction:
+      - '"login"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '505'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 500
+      message: Server Error
+    headers:
+      Date:
+      - Thu, 09 Jan 2014 07:44:58 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:sf="urn:fault.partner.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><soapenv:Fault><faultcode>INVALID_LOGIN</faultcode><faultstring>INVALID_LOGIN:
+        Invalid username, password, security token; or user locked out.</faultstring><detail><sf:LoginFault
+        xsi:type="sf:LoginFault"><sf:exceptionCode>INVALID_LOGIN</sf:exceptionCode><sf:exceptionMessage>Invalid
+        username, password, security token; or user locked out.</sf:exceptionMessage></sf:LoginFault></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>'
+    http_version:
+  recorded_at: Thu, 09 Jan 2014 07:44:56 GMT
+recorded_with: VCR 2.8.0
