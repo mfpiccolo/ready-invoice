@@ -14,6 +14,8 @@ if RUBY_ENGINE == "ruby"
 end
 
 ENV["RAILS_ENV"] = "test"
+require 'dotenv'
+Dotenv.load ".env.test"
 require File.expand_path("../../config/environment", __FILE__)
 
 require "thincloud-test-rails"

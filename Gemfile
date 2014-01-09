@@ -12,6 +12,7 @@ gem "soft_service", git: "git@github.com:elskwid/soft_service.git"
 
 gem "attr_encrypted"
 
+gem "simple_form"
 gem "awesome_print"
 
 # gem "salesforce_bulk_api", :git => "git@github.com:StepsAway/salesforce_bulk_api.git"
@@ -75,6 +76,7 @@ group :development, :test do
   gem "pry",                     "~> 0.9.12.2"
   gem "pry-debugger",            "~> 0.2.2"
   gem "vcr"
+  gem "dotenv"
 end
 
 group :development do
