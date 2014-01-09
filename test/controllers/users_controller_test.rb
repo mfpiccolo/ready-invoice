@@ -8,9 +8,9 @@ describe UsersController do
 
   describe "GET index" do
     before { get :index }
-    it "should get index" do
+    it {
       assert_response :success
       assert_not_nil assigns[:users]
-    end
+    }
   end
 end
