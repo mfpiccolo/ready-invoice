@@ -407,9 +407,9 @@ GEM
     wasabi (2.5.1)
       httpi (~> 1.0)
       nokogiri (>= 1.4.0)
-    webmock (1.16.1)
+    webmock (1.8.11)
       addressable (>= 2.2.7)
-      crack (>= 0.3.2)
+      crack (>= 0.1.7)
     wicked_pdf (0.9.10)
       rails
     wkhtmltopdf-binary (0.9.9.1)
@@ -464,6 +464,6 @@ DEPENDENCIES
   thincloud-test-rails!
   uglifier
   vcr
-  webmock
+  webmock (~> 1.8.0)
   wicked_pdf
   wkhtmltopdf-binary
