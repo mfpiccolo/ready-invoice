@@ -55,9 +55,11 @@ class User < ActiveRecord::Base
 
   def define_sf_scopes
     # pluralize is not perfect.  ie. Merchandise__c => merchandises
-    model_names.each do |name|
-      define_singleton_method(TextHelper.pluralize(name.gsub("__c", "").downcase)) do
-        sf_objects.where(otype: name)
+    if model_names.present?
+      model_names.each do |name|
+        define_singleton_method(TextHelper.pluralize(name.gsub("__c", "").downcase)) do
+          sf_objects.where(otype: name)
+        end
       end
     end
   end
