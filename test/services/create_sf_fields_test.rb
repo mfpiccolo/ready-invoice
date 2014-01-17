@@ -1,8 +1,8 @@
 require 'test_helper'
 
-describe CreateSfFields, vcr: true do
+describe CreateSfFields do
 
-  describe "#call" do
+  describe "#call", :vcr do
     describe "with user passed" do
       before do
         @user = FactoryGirl.create(:user, uid: "123", model_names: ["Invoice__c", "Line_Item__c", "Merchandise__c"])
