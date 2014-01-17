@@ -14,6 +14,7 @@ gem "attr_encrypted"
 
 gem "simple_form"
 gem "awesome_print"
+gem "pliable", path: "~/code/mfpiccolo/pliable"
 
 # gem "salesforce_bulk_api", :git => "git@github.com:StepsAway/salesforce_bulk_api.git"
 gem "salesforce_bulk"
