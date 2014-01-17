@@ -28,21 +28,21 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 09 Jan 2014 17:38:50 GMT
+      - Tue, 14 Jan 2014 05:09:06 GMT
       Content-Type:
       - text/xml;charset=UTF-8
       Content-Length:
-      - '776'
+      - '778'
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-        xmlns="urn:partner.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><loginResponse><result><metadataServerUrl>https://na15.salesforce.com/services/Soap/m/29.0/00Di0000000iISf</metadataServerUrl><passwordExpired>false</passwordExpired><sandbox>false</sandbox><serverUrl>https://na15.salesforce.com/services/Soap/u/29.0/00Di0000000iISf</serverUrl><sessionId>00Di0000000iISf!AR8AQBfsACFztV_KiUhTA.scyo_dhAAoAgBwRFerapwvD.UyRjzJkm6v2cyilufVLAp2bQlQHBQjDuVVTpzNOCGNZr2L6SyY</sessionId><userId>005i0000002NdyWAAS</userId><userInfo><accessibilityMode>false</accessibilityMode><currencySymbol>$</currencySymbol><orgAttachmentFileSizeLimit>5242880</orgAttachmentFileSizeLimit><orgDefaultCurrencyIsoCode>USD</orgDefaultCurrencyIsoCode><orgDisallowHtmlAttachments>false</orgDisallowHtmlAttachments><orgHasPersonAccounts>false</orgHasPersonAccounts><organizationId>00Di0000000iISfEAM</organizationId><organizationMultiCurrency>false</organizationMultiCurrency><organizationName>New
+        xmlns="urn:partner.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><loginResponse><result><metadataServerUrl>https://na15.salesforce.com/services/Soap/m/29.0/00Di0000000iISf</metadataServerUrl><passwordExpired>false</passwordExpired><sandbox>false</sandbox><serverUrl>https://na15.salesforce.com/services/Soap/u/29.0/00Di0000000iISf</serverUrl><sessionId>00Di0000000iISf!AR8AQPCjEcN8HXEgdGiGdClNGwwiodEvGunI.K_VgiYfrbXjd_dUgydC9Dh3Sm7aEpWGzGYxhutT2z6jJ6vr54bjp8EllVWn</sessionId><userId>005i0000002NdyWAAS</userId><userInfo><accessibilityMode>false</accessibilityMode><currencySymbol>$</currencySymbol><orgAttachmentFileSizeLimit>5242880</orgAttachmentFileSizeLimit><orgDefaultCurrencyIsoCode>USD</orgDefaultCurrencyIsoCode><orgDisallowHtmlAttachments>false</orgDisallowHtmlAttachments><orgHasPersonAccounts>false</orgHasPersonAccounts><organizationId>00Di0000000iISfEAM</organizationId><organizationMultiCurrency>false</organizationMultiCurrency><organizationName>New
         Leaders</organizationName><profileId>00ei0000001BdjiAAC</profileId><roleId
         xsi:nil="true"/><sessionSecondsValid>7200</sessionSecondsValid><userDefaultCurrencyIsoCode
         xsi:nil="true"/><userEmail>mfpiccolo@gmail.com</userEmail><userFullName>Mike
         Piccolo</userFullName><userId>005i0000002NdyWAAS</userId><userLanguage>en_US</userLanguage><userLocale>en_US</userLocale><userName>mfpiccolo@gmail.com</userName><userTimeZone>America/Los_Angeles</userTimeZone><userType>Standard</userType><userUiSkin>Theme3</userUiSkin></userInfo></result></loginResponse></soapenv:Body></soapenv:Envelope>
     http_version: 
-  recorded_at: Thu, 09 Jan 2014 17:38:49 GMT
+  recorded_at: Tue, 14 Jan 2014 05:09:07 GMT
 - request:
     method: post
     uri: https://na15.salesforce.com/services/Soap/m/29.0/00Di0000000iISf
@@ -50,7 +50,7 @@ http_interactions:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://soap.sforce.com/2006/04/metadata"
-        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://soap.sforce.com/2006/04/metadata"><env:Header><ins0:SessionHeader><ins0:sessionId>00Di0000000iISf!AR8AQBfsACFztV_KiUhTA.scyo_dhAAoAgBwRFerapwvD.UyRjzJkm6v2cyilufVLAp2bQlQHBQjDuVVTpzNOCGNZr2L6SyY</ins0:sessionId></ins0:SessionHeader></env:Header><env:Body><ins0:create><ins0:metadata
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://soap.sforce.com/2006/04/metadata"><env:Header><ins0:SessionHeader><ins0:sessionId>00Di0000000iISf!AR8AQPCjEcN8HXEgdGiGdClNGwwiodEvGunI.K_VgiYfrbXjd_dUgydC9Dh3Sm7aEpWGzGYxhutT2z6jJ6vr54bjp8EllVWn</ins0:sessionId></ins0:SessionHeader></env:Header><env:Body><ins0:create><ins0:metadata
         xsi:type="ins0:CustomField"><ins0:fullName>Invoice__c.PDF_Link__c</ins0:fullName><tns:type>Url</tns:type><tns:label>PDF
         Link</tns:label></ins0:metadata></ins0:create></env:Body></env:Envelope>
     headers:
@@ -72,17 +72,17 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 09 Jan 2014 17:38:51 GMT
+      - Tue, 14 Jan 2014 05:09:07 GMT
       Content-Type:
       - text/xml;charset=UTF-8
       Content-Length:
-      - '226'
+      - '225'
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-        xmlns="http://soap.sforce.com/2006/04/metadata"><soapenv:Body><createResponse><result><done>false</done><id>04si00000012yPOAAY</id><state>InProgress</state></result></createResponse></soapenv:Body></soapenv:Envelope>
+        xmlns="http://soap.sforce.com/2006/04/metadata"><soapenv:Body><createResponse><result><done>false</done><id>04si000000134fDAAQ</id><state>InProgress</state></result></createResponse></soapenv:Body></soapenv:Envelope>
     http_version: 
-  recorded_at: Thu, 09 Jan 2014 17:38:50 GMT
+  recorded_at: Tue, 14 Jan 2014 05:09:08 GMT
 - request:
     method: post
     uri: https://na15.salesforce.com/services/Soap/m/29.0/00Di0000000iISf
@@ -90,7 +90,7 @@ http_interactions:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://soap.sforce.com/2006/04/metadata"
-        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://soap.sforce.com/2006/04/metadata"><env:Header><ins0:SessionHeader><ins0:sessionId>00Di0000000iISf!AR8AQBfsACFztV_KiUhTA.scyo_dhAAoAgBwRFerapwvD.UyRjzJkm6v2cyilufVLAp2bQlQHBQjDuVVTpzNOCGNZr2L6SyY</ins0:sessionId></ins0:SessionHeader></env:Header><env:Body><ins0:checkStatus><tns:ids>04si00000012yPOAAY</tns:ids></ins0:checkStatus></env:Body></env:Envelope>
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://soap.sforce.com/2006/04/metadata"><env:Header><ins0:SessionHeader><ins0:sessionId>00Di0000000iISf!AR8AQPCjEcN8HXEgdGiGdClNGwwiodEvGunI.K_VgiYfrbXjd_dUgydC9Dh3Sm7aEpWGzGYxhutT2z6jJ6vr54bjp8EllVWn</ins0:sessionId></ins0:SessionHeader></env:Header><env:Body><ins0:checkStatus><tns:ids>04si000000134fDAAQ</tns:ids></ins0:checkStatus></env:Body></env:Envelope>
     headers:
       Soapaction:
       - '"checkStatus"'
@@ -110,7 +110,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 09 Jan 2014 17:38:53 GMT
+      - Tue, 14 Jan 2014 05:09:10 GMT
       Content-Type:
       - text/xml;charset=UTF-8
       Content-Length:
@@ -118,8 +118,8 @@ http_interactions:
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-        xmlns="http://soap.sforce.com/2006/04/metadata"><soapenv:Body><checkStatusResponse><result><done>true</done><id>04si00000012yPOAAY</id><message>There
+        xmlns="http://soap.sforce.com/2006/04/metadata"><soapenv:Body><checkStatusResponse><result><done>true</done><id>04si000000134fDAAQ</id><message>There
         is already a field named PDF_Link on Invoice.</message><state>Error</state><statusCode>DUPLICATE_DEVELOPER_NAME</statusCode></result></checkStatusResponse></soapenv:Body></soapenv:Envelope>
     http_version: 
-  recorded_at: Thu, 09 Jan 2014 17:38:53 GMT
+  recorded_at: Tue, 14 Jan 2014 05:09:11 GMT
 recorded_with: VCR 2.8.0
