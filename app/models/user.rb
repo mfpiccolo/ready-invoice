@@ -17,7 +17,7 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :sf_objects
+  has_many :plies
 
   after_initialize :define_sf_scopes
 
@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
     if model_names.present?
       model_names.each do |name|
         define_singleton_method(TextHelper.pluralize(name.gsub("__c", "").downcase)) do
-          sf_objects.where(otype: name)
+          plies.where(otype: name)
         end
       end
     end

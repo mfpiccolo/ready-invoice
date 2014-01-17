@@ -114,6 +114,7 @@ PATH
   remote: ~/code/mfpiccolo/pliable
   specs:
     pliable (0.1)
+      rails (>= 4.0)
 
 GEM
   remote: https://rubygems.org/

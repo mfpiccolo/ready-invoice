@@ -31,7 +31,7 @@ class SfSynch
       dbdc_client.materialize model
       "DBDC::#{model}".constantize.all.each do |record|
         # if record.LastModifiedDate.to_date > Date.today.advance(days: -1)
-          object = user.sf_objects.find_or_create_by(oid: record.Id)
+          object = user.plies.find_or_create_by(oid: record.Id)
           object.update_attributes(
             data: record.attributes,
             otype: model,
@@ -46,7 +46,7 @@ class SfSynch
   def synch_pdf_link_to_sf
     # update the link by records
     user.reload
-    invoices = user.sf_objects
+    invoices = user.plies
 
     records_to_update = Array.new
 
@@ -58,12 +58,12 @@ class SfSynch
   end
 
   def create_relations
-    user.sf_objects.each do |record|
+    user.plies.each do |record|
       related_model_names = record.instance_variables.map {|e| e.to_s.gsub("@", "") } & user.model_names
       related_model_names.each do |name|
-        child = SfObject.find_by_oid(record.send(name.to_sym))
-        unless SfObjectRelation.where(parent_id: record.id, child_id: child.id).present?
-          SfObjectRelation.create!(
+        child = Ply.find_by_oid(record.send(name.to_sym))
+        unless PlyRelation.where(parent_id: record.id, child_id: child.id).present?
+          PlyRelation.create!(
             parent_id: record.id,
             parent_type: record.otype,
             child_id: child.id,
@@ -75,7 +75,7 @@ class SfSynch
   end
 
   def self.update_if_needed_for(user)
-    if user.sf_objects.oldest_last_checked_time > Time.now.advance(hours: 1)
+    if user.plies.oldest_last_checked_time > Time.now.advance(hours: 1)
       call
     end
   end
