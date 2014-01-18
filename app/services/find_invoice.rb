@@ -4,7 +4,7 @@ class FindInvoice
   collaborators :invoice_oid, :user
 
   def call(&block)
-    user.plies.find_by_oid(invoice_oid)
+    user.invoices.find_by_oid(invoice_oid)
   end
 
 end
