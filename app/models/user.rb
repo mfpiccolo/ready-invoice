@@ -18,6 +18,7 @@
 
 class User < ActiveRecord::Base
   has_many :plies
+  has_many :invoices
 
   after_initialize :define_sf_scopes
 
