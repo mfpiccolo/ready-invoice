@@ -1,23 +1,21 @@
-<div class="row collapse">
-  <h1>Listing Invoices</h1>
+<h1>Listing Invoices</h1>
 
-  <table class="table" class="responsive">
-    <tr>
-      <th>Invoice Name</th>
-      <th>Total</th>
-      <th>Status</th>
-      <th></th>
-      <th></th>
-    </tr>
+<table class="table" class="responsive">
+  <tr>
+    <th>Invoice Name</th>
+    <th>Total</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+  </tr>
 
-  <% @invoices.each do |invoice| %>
-    <tr class="<%= (invoice.Name == 'Closed Won') ? "success" : "warning"%> ">
-      <td><%= invoice.Name %></td>
-      <td><%= invoice.Invoice_Total__c %></td>
-      <td><%= invoice.Status__c %></td>
-      <td><%= link_to 'Create PDF document', invoice_path(invoice, format: :pdf) %></td>
-      <td><%= link_to 'Edit PDF document', invoice_path(invoice) %></td>
-    </tr>
-  <% end %>
-  </table>
-</div>
+<% @invoices.each do |invoice| %>
+  <tr class="<%= (invoice.Name == 'Closed Won') ? "success" : "warning"%> ">
+    <td><%= invoice.Name %></td>
+    <td><%= invoice.Invoice_Total__c %></td>
+    <td><%= invoice.Status__c %></td>
+    <td><%= link_to invoice_path(invoice, format: :pdf) do %><i class="fa fa-print"><% end %></td>
+    <td></i><%= link_to invoice_path(invoice) do %><i class="fa fa-pencil-square-o"><% end %></td>
+  </tr>
+<% end %>
+</table>

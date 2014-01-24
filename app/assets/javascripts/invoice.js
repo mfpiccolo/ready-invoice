@@ -165,6 +165,9 @@ function onContentLoad() {
   image = document.querySelector('img');
 
   function onClick(e) {
+    if (e.target.parentNode.getAttribute("id")) {
+      window.print();
+    }
     var element = e.target.querySelector('[contenteditable]'), row;
 
     element && e.target != document.documentElement && e.target != document.body && element.focus();

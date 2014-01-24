@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'rails', '4.0.0'
+gem 'rails', git: "git@github.com:rails/rails.git", branch: "4-0-stable"
 gem "pg"
 
 gem 'sass-rails',   '~> 4.0.0'
@@ -8,9 +8,13 @@ gem 'uglifier'
 gem 'foundation-rails'
 gem "font-awesome-rails"
 
+gem "soft_service", git: "git@github.com:elskwid/soft_service.git"
+
 gem "attr_encrypted"
 
+gem "simple_form"
 gem "awesome_print"
+gem "pliable",       "~> 0.1.0"
 
 # gem "salesforce_bulk_api", :git => "git@github.com:StepsAway/salesforce_bulk_api.git"
 gem "salesforce_bulk"
@@ -65,35 +69,64 @@ gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
 gem 'devise'
 
+gem "thincloud-test", github: "newleaders/thincloud-test", branch: "rails4"
+gem "thincloud-test-rails", github: "newleaders/thincloud-test-rails", branch: "rails4"
+
+group :development, :test do
+  gem "rspec-rails"
+  gem "pry",                     "~> 0.9.12.2"
+  gem "pry-debugger",            "~> 0.2.2"
+  gem "vcr"
+  gem "minitest-vcr",            "~> 0.0.2"
+  gem "dotenv"
+end
+
+group :development do
+  gem "better_errors",     "~> 1.0.1"
+  gem "binding_of_caller", "~> 0.7.2"
+  gem "quiet_assets",      "~> 1.0.2"
+end
+
+group :test do
+  gem "capybara",                "~> 2.1.0"
+  gem "launchy",                 "~> 2.3.0"
+  gem "minitest-capybara",       "~> 0.4.1"
+  gem "minispec-metadata", "~> 2.0.0"
+  gem "capybara_minitest_spec",  "~> 1.0.0"
+  gem "poltergeist",             "~> 1.3.0"
+  gem "database_cleaner",        "~> 1.0.1"
+  gem "webmock",                 "~> 1.8.0"
+end
+
 #Testing, Where in a highly opinionated list of Gems is included:
-gem 'guard-rspec', group: :development
-gem 'rspec-rails', '>= 2.12.2', :group => [:development, :test]
-gem 'capybara', '>= 2.0.2', :group => :test
-gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
-gem "email_spec", ">= 1.4.0", :group => :test
+# group :development do
+#   gem "better_errors"
+#   gem "binding_of_caller"
+#   gem "meta_request"
+#   gem "quiet_assets"
+#   gem "awesome_print"
+#   gem "guard"
+#   gem "guard-minitest"
+#   gem "simplecov"
+#   gem "terminal-notifier-guard"
+# end
 
-#Db Maintenance, Access and Utilities:
-gem "database_cleaner", ">= 0.9.1", :group => :test
+# group :test, :development do
+#   gem "rspec-rails"
+#   gem "shoulda-matchers"
+#   gem "pry"
+#   gem "pry-debugger"
+#   gem "factory_girl_rails"
+#   gem "rb-fsevent"
+#   gem "guard-rspec"
+#   gem "vcr"
+#   gem "jasminerice", :git => 'https://github.com/bradphelan/jasminerice.git'
+# end
 
-#General Development gems not part of rails.
-gem 'jquery-rails' #Jquery or die.
-gem "sendgrid", ">= 1.0.1" #Because email just won't die.
-gem "simple_form", ">= 2.0.4" #just ... yeah.
+# group :test do
+#   gem "capybara"
+#   gem "capybara-firebug"
+#   gem "poltergeist"
+#   gem "webmock"
+# end
 
-#Who doesn't love the asset pipeline?
-#Who hasn't thought "STFU Asset Pipeline" in development?
-gem "quiet_assets", ">= 1.0.1", :group => :development
-
-gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
-
-#Debugging -- because life is too short:
-gem "better_errors", ">= 0.6.0", :group => :development
-gem "binding_of_caller", ">= 0.7.1", :group => :development
-gem 'pry', :group => [:development, :test], :require => 'pry' # Use pry or else. #srsly.
-# Pry is an INSANELY powerful debugging shell.
-#
-# GO HERE and Find out why: http://railscasts.com/episodes/280-pry-with-rails
-#
-# Now you're set to drop:
-# binding.pry
-# wherever you need to debug code live...
