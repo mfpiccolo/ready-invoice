@@ -69,10 +69,9 @@ gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
 gem 'devise'
 
-gem "thincloud-test", github: "newleaders/thincloud-test", branch: "rails4"
-gem "thincloud-test-rails", github: "newleaders/thincloud-test-rails", branch: "rails4"
-
 group :development, :test do
+  gem "thincloud-test", github: "newleaders/thincloud-test", branch: "rails4"
+  gem "thincloud-test-rails", github: "newleaders/thincloud-test-rails", branch: "rails4"
   gem "rspec-rails"
   gem "pry",                     "~> 0.9.12.2"
   gem "pry-debugger",            "~> 0.2.2"
