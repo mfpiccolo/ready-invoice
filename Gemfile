@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'rails', git: "git@github.com:rails/rails.git", branch: "4-0-stable"
+gem 'rails', git: "git://github.com/rails/rails.git", branch: "4-0-stable"
 gem "pg"
 
 gem 'sass-rails',   '~> 4.0.0'
@@ -8,7 +8,7 @@ gem 'uglifier'
 gem 'foundation-rails'
 gem "font-awesome-rails"
 
-gem "soft_service", git: "git@github.com:elskwid/soft_service.git"
+gem "soft_service", git: "git://github.com/elskwid/soft_service.git"
 
 gem "attr_encrypted"
 
@@ -19,7 +19,7 @@ gem "pliable",       "~> 0.1.0"
 # gem "salesforce_bulk_api", :git => "git@github.com:StepsAway/salesforce_bulk_api.git"
 gem "salesforce_bulk"
 gem "restforce"
-gem "metaforce", git: "git@github.com:mfpiccolo/metaforce.git"
+gem "metaforce", git: "git://github.com/mfpiccolo/metaforce.git"
 
 # Salesforce Related Gems:
 gem 'databasedotcom-oauth2' #basic rest access to salesforce.com.
@@ -30,7 +30,7 @@ gem 'databasedotcom-oauth2' #basic rest access to salesforce.com.
 # be noted that Eric (EJHolmes) was the original author of
 # databasedotcom (i'm like 99.5% sure of that.)
 
-gem 'databasedotcom-rails', :git => 'git@github.com:noeticpenguin/databasedotcom-rails.git'
+gem 'databasedotcom-rails', :git => 'git://github.com/noeticpenguin/databasedotcom-rails.git'
 # this gem gives you some auto-wizbang
 # voodoo to automatically back your controllers with models in
 # salesforce. Using this gem allows you to autowire, for instance

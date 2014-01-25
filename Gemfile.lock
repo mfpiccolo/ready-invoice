@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/elskwid/soft_service.git
+  revision: c8f4232ac97d01eb6cea1f9bec7d7270ec8e01cb
+  specs:
+    soft_service (0.1)
+
+GIT
   remote: git://github.com/gregbell/active_admin.git
   revision: 5ba39c0c85920ddfc5be9985a8c0c9310da1f878
   specs:
@@ -15,6 +21,19 @@ GIT
       rails (>= 3.2, < 4.1)
       ransack (~> 1.0)
       sass-rails
+
+GIT
+  remote: git://github.com/mfpiccolo/metaforce.git
+  revision: 6e29008033959ac70fd3d65c3c31851f8da1f2ff
+  specs:
+    metaforce (1.0.7)
+      activesupport
+      hashie (~> 2.0.5)
+      listen (~> 1.0.0)
+      rb-fsevent (~> 0.9.1)
+      rubyzip (~> 1.0)
+      savon (~> 1.2.0)
+      thor (~> 0.18.1)
 
 GIT
   remote: git://github.com/newleaders/thincloud-test-rails.git
@@ -44,34 +63,15 @@ GIT
       thor (~> 0.18.1)
 
 GIT
-  remote: git@github.com:elskwid/soft_service.git
-  revision: c8f4232ac97d01eb6cea1f9bec7d7270ec8e01cb
-  specs:
-    soft_service (0.1)
-
-GIT
-  remote: git@github.com:mfpiccolo/metaforce.git
-  revision: 6e29008033959ac70fd3d65c3c31851f8da1f2ff
-  specs:
-    metaforce (1.0.7)
-      activesupport
-      hashie (~> 2.0.5)
-      listen (~> 1.0.0)
-      rb-fsevent (~> 0.9.1)
-      rubyzip (~> 1.0)
-      savon (~> 1.2.0)
-      thor (~> 0.18.1)
-
-GIT
-  remote: git@github.com:noeticpenguin/databasedotcom-rails.git
+  remote: git://github.com/noeticpenguin/databasedotcom-rails.git
   revision: a0b11678661ee0e5144f2a75af48ac2761a8cf9d
   specs:
     databasedotcom-rails (1.1.0)
       databasedotcom
 
 GIT
-  remote: git@github.com:rails/rails.git
-  revision: e2b2539468e2f0109ca309ed9ade53edbcc156a2
+  remote: git://github.com/rails/rails.git
+  revision: b942b2eec1d80968442a63f4e0933540066e9618
   branch: 4-0-stable
   specs:
     actionmailer (4.0.2)
