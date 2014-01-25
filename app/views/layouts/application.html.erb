@@ -40,10 +40,15 @@
                         <i class="fa fa-users user-nav-icon icon-dashboard icon-large"></i>
                         <span class="sidebar-label">Users</span>
                       <% end %>
-                      <%= link_to invoices_path, class: "list-group-item home" do %>
-                        <i class="user-nav-icon icon-dashboard icon-large"></i>
-                        <span class="sidebar-label">Invoices</span>
-                      <% end %>
+                    <% end %>
+                    <%= link_to signout_path, class: "list-group-item home" do %>
+                      <i class="fa fa-sign-out user-nav-icon icon-dashboard icon-large"></i>
+                      <span class="sidebar-label">Log Out</span>
+                    <% end %>
+                  <% else %>
+                    <%= link_to signin_path, class: "list-group-item home" do %>
+                      <i class="fa fa-sign-in user-nav-icon icon-dashboard icon-large"></i>
+                      <span class="sidebar-label">Log In</span>
                     <% end %>
                   <% end %>
                 </div>
