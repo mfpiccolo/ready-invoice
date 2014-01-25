@@ -19,7 +19,7 @@ gem "pliable",       "~> 0.1.0"
 # gem "salesforce_bulk_api", :git => "git@github.com:StepsAway/salesforce_bulk_api.git"
 gem "salesforce_bulk"
 gem "restforce"
-gem "metaforce", path: "~/code/mfpiccolo/metaforce"
+gem "metaforce", git: "git@github.com:mfpiccolo/metaforce.git"
 
 # Salesforce Related Gems:
 gem 'databasedotcom-oauth2' #basic rest access to salesforce.com.
