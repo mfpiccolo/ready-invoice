@@ -1,18 +1,11 @@
 module ApplicationHelper
 
-  def flash_message(type, text)
-      flash[type] ||= []
-      flash[type] << text
+  def add_flash_message(key,message)
+    flash[key]=message
   end
 
-  def render_flash
-    rendered = []
-    flash.each do |type, messages|
-      messages.each do |m|
-        rendered << render(:partial => 'shared/flash', :locals => {:type => type, :message => m}) unless m.blank?
-      end
-    end
-    rendered.join('<br/>')
+  def flash_messages
+    render 'shared/flash', :messages => flash
   end
 
 end

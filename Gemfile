@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 ruby "2.0.0"
 
+group :production do
+  gem 'rails_12factor'
+end
+
 gem 'rails', git: "git://github.com/rails/rails.git", branch: "4-0-stable"
 gem "pg"
 
