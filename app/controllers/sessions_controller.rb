@@ -23,7 +23,8 @@ class SessionsController < ApplicationController
     end
 
     # unless the oldest record has been updated in the last hour
-    SfSynch.update_if_needed_for(current_user)
+    # TODO enable this feature
+    # SfSynch.update_if_needed_for(current_user)
   end
 
   def destroy
