@@ -17,7 +17,7 @@
   <body class="dashboard no-header no-footer" style="" data-twttr-rendered="true">
     <div id="main" role="main">
       <div class="dashboard-layout">
-
+        <% # TODO pull these into partials  %>
         <div class="sidebar">
           <div class="dashboard-sidebar">
             <% link_to "/", "Home", class: "header-logo white active" %>
@@ -40,6 +40,10 @@
                         <i class="fa fa-users user-nav-icon icon-dashboard icon-large"></i>
                         <span class="sidebar-label">Users</span>
                       <% end %>
+                    <% end %>
+                    <%= link_to synch_path, class: "list-group-item home" do %>
+                      <i class="fa fa-refresh user-nav-icon icon-dashboard icon-large"></i>
+                      <span class="sidebar-label">Refresh Data</span>
                     <% end %>
                     <%= link_to signout_path, class: "list-group-item home" do %>
                       <i class="fa fa-sign-out user-nav-icon icon-dashboard icon-large"></i>

@@ -6,4 +6,5 @@ ReadyInvoice::Application.routes.draw do
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/auth/failure' => 'sessions#failure'
   resources :invoices
+  get "/synch" => "plies#update_all"
 end
