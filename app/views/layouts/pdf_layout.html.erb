@@ -4,8 +4,8 @@
     <title>Invoice</title>
     <link rel="license" href="http://www.opensource.org/licenses/mit-license/">
     <%= javascript_include_tag "invoice" %>
-    <%= stylesheet_link_tag "invoice" %>
-    <%= stylesheet_link_tag "pdf" %>
+    <%= stylesheet_link_tag "invoice", media: "all" %>
+    <%= stylesheet_link_tag "pdf", media: "all" %>
     <%= stylesheet_link_tag "font-awesome" %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
