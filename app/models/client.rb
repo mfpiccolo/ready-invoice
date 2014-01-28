@@ -8,12 +8,6 @@ class Client
       Databasedotcom::Client.new(sobject_module: "DBDC").tap do |client|
         client.authenticate credentials.delete_if { |k,v| ![:username, :password].include?(k) }
       end
-    # when :restforce
-    #   Restforce.new username: credentials[:username],
-    #     password:        credentials[:password],
-    #     security_token:  credentials[:security_token],
-    #     client_id:       cfg["client_id"],
-    #     client_secret:   cfg["client_secret"]
     when :metaforce
       Metaforce.new username: credentials[:username],
         password: credentials[:password],
