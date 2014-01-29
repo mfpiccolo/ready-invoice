@@ -28,6 +28,8 @@ class SfSynch
 
       records = []
 
+      Object.send(:remove_const, "DBDC::#{model}".constantize) unless defined?("DBDC::#{model}".constantize)
+
       dbdc_client.materialize model
       "DBDC::#{model}".constantize.all.each do |record|
         # if record.LastModifiedDate.to_date > Date.today.advance(days: -1)

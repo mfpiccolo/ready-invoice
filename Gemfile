@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 ruby "2.0.0"
 
+group :production do
+  gem 'rails_12factor'
+end
+
 gem 'rails', git: "git://github.com/rails/rails.git", branch: "4-0-stable"
 gem "pg"
 
@@ -20,7 +24,6 @@ gem "pliable",       "~> 0.1.0"
 
 # gem "salesforce_bulk_api", :git => "git@github.com:StepsAway/salesforce_bulk_api.git"
 gem "salesforce_bulk"
-gem "restforce"
 gem "metaforce", git: "git://github.com/mfpiccolo/metaforce.git"
 
 # Salesforce Related Gems:

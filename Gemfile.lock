@@ -198,8 +198,6 @@ GEM
       railties (>= 3.0.0)
     faraday (0.8.9)
       multipart-post (~> 1.2.0)
-    faraday_middleware (0.9.0)
-      faraday (>= 0.7.4, < 0.9)
     faye-websocket (0.4.7)
       eventmachine (>= 0.12.0)
     ffi (1.9.3)
@@ -331,6 +329,11 @@ GEM
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.2)
+    rails_stdout_logging (0.0.3)
     rake (10.1.1)
     ransack (1.1.0)
       actionpack (>= 3.0)
@@ -343,11 +346,6 @@ GEM
       ffi (>= 0.5.0)
     responders (1.0.0)
       railties (>= 3.2, < 5)
-    restforce (1.4.2)
-      faraday (~> 0.8.4)
-      faraday_middleware (>= 0.8.8)
-      hashie (>= 1.2.0, < 2.1)
-      json (>= 1.7.5, < 1.9.0)
     rolify (3.2.0)
     rspec-core (2.14.7)
     rspec-expectations (2.14.4)
@@ -467,7 +465,7 @@ DEPENDENCIES
   pry-debugger (~> 0.2.2)
   quiet_assets (~> 1.0.2)
   rails!
-  restforce
+  rails_12factor
   rolify (>= 3.2.0)
   rspec-rails
   salesforce_bulk

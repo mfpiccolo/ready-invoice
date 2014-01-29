@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require invoice
+//= require layout
 //= require home
 
 $(function(){ $(document).foundation(); });
