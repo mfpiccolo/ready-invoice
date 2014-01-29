@@ -16,6 +16,7 @@ class InvoicesController < ApplicationController
   # GET /invoices/1
   def show
     @line_items = @invoice.line_items
+    gon.invoice = @invoice.as_json
 
     respond_to do |format|
       format.html do

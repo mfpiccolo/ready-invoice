@@ -40,11 +40,11 @@
 
       <% @line_items.each do |li| %>
         <tr>
-          <td><a class="cut">-</a><span contenteditable=""><%= li.Name %></span></td>
-          <td><span contenteditable=""><%= li.merchandises.first.Name %></span></td>
-          <td><span data-prefix="">$</span><span contenteditable=""><%= li.Unit_Price__c %></span></td>
-          <td><span contenteditable=""><%= li.Quantity__c %></span></td>
-          <td><span data-prefix="">$</span><span>600.00</span></td>
+          <td class="invoice-menu"><a class="cut">-</a><span contenteditable=""><%= li.Name %></span></td>
+          <td class="invoice-menu"><span contenteditable=""><%= li.merchandises.first.Name %></span></td>
+          <td class="invoice-menu"><span data-prefix="">$</span><span contenteditable=""><%= li.Unit_Price__c %></span></td>
+          <td class="invoice-menu"><span contenteditable=""><%= li.Quantity__c %></span></td>
+          <td class="invoice-menu"><span data-prefix="">$</span><span>600.00</span></td>
         </tr>
       <% end %>
     </tbody>
