@@ -8,7 +8,7 @@ module InvoiceHelper
       li.send(user.layout.send("li_#{position}_attribute"))
     else
       model = li.children.where(otype: user.layout.send("li_#{position}_model")).first
-      if model.send(user.layout.send("li_#{position}_attribute")).present?
+      if model.try(:send, user.layout.send("li_#{position}_attribute")).present?
          model.send(user.layout.send("li_#{position}_attribute"))
       else
         ""
