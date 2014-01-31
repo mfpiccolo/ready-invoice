@@ -48,7 +48,10 @@ ReadyInvoice::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w(invoice.js invoice.css pdf.css font-awesome.css jquery.contextMenu.css jquery.contextMenu.js)
+  config.assets.precompile += %w(
+    invoice.js invoice.css pdf.css font-awesome.css jquery.js jquery-ujs.js jquery.contextMenu.css
+    jquery.contextMenu.js right_click.js
+  )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
