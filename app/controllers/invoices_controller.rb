@@ -56,6 +56,6 @@ class InvoicesController < ApplicationController
   private
 
   def find_pg_invoice
-    @invoice = FindInvoice.(params[:id], current_user)
+    @invoice = FindInvoice.(params[:id], current_user.id)
   end
 end

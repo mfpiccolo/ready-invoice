@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
 
   after_initialize :define_sf_scopes
 
+  before_create :create_layout
+
   attr_encrypted :username, :password, :security_token, :key => "a secret key", :prefix => 'sf_', :suffix => '_crypted'
 
   # TODO Fix rolify problem.  Guard won't run with rolify
