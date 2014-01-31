@@ -7,7 +7,11 @@ module InvoiceHelper
       li.send(current_user.layout.send("li_#{position}_attribute"))
     else
       model = li.children.where(otype: current_user.layout.send("li_#{position}_model")).first
-      model.send(current_user.layout.send("li_#{position}_attribute"))
+      if model.send(current_user.layout.send("li_#{position}_attribute")).present?
+         model.send(current_user.layout.send("li_#{position}_attribute"))
+      else
+        ""
+      end
     end
   end
 
