@@ -40,10 +40,10 @@
 
       <% @line_items.each do |li| %>
         <tr>
-          <td class="li-value-name"><a class="cut">-</a><span contenteditable=""><%= layout_value(li.id, "name") %></span></td>
-          <td class="li-value-description"><span contenteditable=""><%= layout_value(li.id, "description") %></span></td>
-          <td class="li-value-rate"><span data-prefix="">$</span><span contenteditable=""><%= layout_value(li.id, "rate") %></span></td>
-          <td class="li-value-quantity"><span contenteditable=""><%= layout_value(li.id, "quantity") %></span></td>
+          <td class="li-value-name"><a class="cut">-</a><span contenteditable=""><%= layout_value(li.id, "name", current_user.id) %></span></td>
+          <td class="li-value-description"><span contenteditable=""><%= layout_value(li.id, "description", current_user.id) %></span></td>
+          <td class="li-value-rate"><span data-prefix="">$</span><span contenteditable=""><%= layout_value(li.id, "rate", current_user.id) %></span></td>
+          <td class="li-value-quantity"><span contenteditable=""><%= layout_value(li.id, "quantity", current_user.id) %></span></td>
           <td class="li-value-price"><span data-prefix="">$</span><span>600.00</span></td>
         </tr>
       <% end %>
