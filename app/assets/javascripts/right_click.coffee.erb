@@ -1,0 +1,17 @@
+$ ->
+  cm_menu_items = $.parseJSON(gon.rc_attrs)
+
+  $.contextMenu
+    selector: ".invoice-menu"
+    items: cm_menu_items
+    callback: (key, options) ->
+      console.log $(this).attr("id")
+      $.ajax
+        type: "GET"
+        url: gon.invoice.oid + "/update_template"
+        data:
+          model_attribute: $(this).attr("id") + "-" + key
+        #   console.log(arguments);
+        #   alert ( " Can't do because: " + error );
+        # success: (msg) ->
+        #   alert "Data Saved: " + msg

@@ -29,22 +29,22 @@
   <table class="inventory">
     <thead>
       <tr>
-        <th><span contenteditable="">Name</span></th>
-        <th><span contenteditable="">Description</span></th>
-        <th><span contenteditable="">Rate</span></th>
-        <th><span contenteditable="">Quantity</span></th>
-        <th><span contenteditable="">Price</span></th>
+        <th id="li_name" class="invoice-menu li-header-name"><span contenteditable="">Name</span></th>
+        <th id="li_description" class="invoice-menu li-header-description"><span contenteditable="">Description</span></th>
+        <th id="li_rate" class="invoice-menu li-header-rate"><span contenteditable="">Rate</span></th>
+        <th id="li_quantity" class="invoice-menu li-header-quantity"><span contenteditable="">Quantity</span></th>
+        <th class="li-header-price"><span contenteditable="">Price</span></th>
       </tr>
     </thead>
     <tbody>
 
       <% @line_items.each do |li| %>
         <tr>
-          <td><a class="cut">-</a><span contenteditable=""><%= li.Name %></span></td>
-          <td><span contenteditable=""><%= li.merchandises.first.Name %></span></td>
-          <td><span data-prefix="">$</span><span contenteditable=""><%= li.Unit_Price__c %></span></td>
-          <td><span contenteditable=""><%= li.Quantity__c %></span></td>
-          <td><span data-prefix="">$</span><span>600.00</span></td>
+          <td class="li-value-name"><a class="cut">-</a><span contenteditable=""><%= layout_value(li.id, "name") %></span></td>
+          <td class="li-value-description"><span contenteditable=""><%= layout_value(li.id, "description") %></span></td>
+          <td class="li-value-rate"><span data-prefix="">$</span><span contenteditable=""><%= layout_value(li.id, "rate") %></span></td>
+          <td class="li-value-quantity"><span contenteditable=""><%= layout_value(li.id, "quantity") %></span></td>
+          <td class="li-value-price"><span data-prefix="">$</span><span>600.00</span></td>
         </tr>
       <% end %>
     </tbody>
