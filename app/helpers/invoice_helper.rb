@@ -13,6 +13,8 @@ module InvoiceHelper
       else
         ""
       end
+      rescue ActionView::Template::Error
+        ""
     end
   end
 
