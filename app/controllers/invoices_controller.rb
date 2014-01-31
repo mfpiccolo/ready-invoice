@@ -16,6 +16,11 @@ class InvoicesController < ApplicationController
   # GET /invoices/1
   def show
     @line_items = @invoice.line_items
+
+    gon.rc_attrs = RightClickAttrs.(current_user.id, @invoice.id)
+
+    gon.li_attrs = { line_items: @line_items.first.data.keys.to_s }
+
     gon.invoice = @invoice.as_json
 
     respond_to do |format|
@@ -35,6 +40,15 @@ class InvoicesController < ApplicationController
                   :right => "Right"
                            }
       end
+    end
+  end
+
+  def update_template
+    current_user.layout.update_from_right_click(params[:model_attribute])
+
+    @invoice = FindInvoice.(params[:invoice_id], current_user)
+    respond_to do |format|
+      format.js
     end
   end
 

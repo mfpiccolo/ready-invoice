@@ -2,6 +2,7 @@
   position: absolute;
   top: 20em;
   left: .5em;
+  cursor: pointer;
 }
 
 .pdf-print-icon {

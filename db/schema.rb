@@ -11,11 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140117210156) do
+ActiveRecord::Schema.define(version: 20140130070818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
+
+  create_table "layouts", force: true do |t|
+    t.integer "user_id"
+    t.string  "li_name_model"
+    t.string  "li_name_attribute"
+    t.string  "li_description_model"
+    t.string  "li_description_attribute"
+    t.string  "li_rate_model"
+    t.string  "li_rate_attribute"
+    t.string  "li_quantity_model"
+    t.string  "li_quantity_attribute"
+    t.string  "invoice_name_model"
+    t.string  "invoice_name_attribute"
+  end
 
   create_table "plies", force: true do |t|
     t.integer  "user_id"
