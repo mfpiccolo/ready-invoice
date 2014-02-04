@@ -43,14 +43,22 @@ class User < ActiveRecord::Base
     end
   end
 
-  # Overwrites setter because controller might send blanks in array
-  def model_names=(array)
-    array.delete("")
-    write_attribute(:model_names, array)
+  def self.current_user
+    Thread.current[:current_user]
   end
 
-  def invoice_api_name
-    model_names.first
+  def self.current_user=(usr)
+    Thread.current[:current_user] = usr
+  end
+
+  def model_names
+    ([invoice_api_name, line_item_api_name] + other_model_names).compact
+  end
+
+  # Overwrites setter because controller might send blanks in array
+  def other_model_names=(array)
+    array.delete("")
+    write_attribute(:other_model_names, array)
   end
 
   def sf_credentials
