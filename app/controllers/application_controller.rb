@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
     def current_user
       begin
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
+        User.current_user = @current_user
       rescue Exception => e
         nil
       end

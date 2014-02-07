@@ -4,7 +4,7 @@ describe InvoicesController do
 
   describe "GET index" do
     before do
-      user = User.create(model_names: ["Invoice__c", "Merchandise__c", "Line_Items__c"])
+      user = User.create(model_names: ["Invoice__c", "Merchandise__c", "Line_Item__c"])
       InvoicesController.any_instance.stubs(:current_user).returns(user)
       get :index
     end
