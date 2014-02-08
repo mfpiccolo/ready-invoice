@@ -4,7 +4,13 @@ describe InvoicesController do
 
   describe "GET index" do
     before do
-      user = User.create(model_names: ["Invoice__c", "Merchandise__c", "Line_Item__c"])
+      user = FactoryGirl.create(
+        :user,
+        uid: "123",
+        invoice_api_name: "Invoice__c",
+        line_item_api_name: "Line_Item__c",
+        other_model_names: ["Merchandise__c"]
+      )
       InvoicesController.any_instance.stubs(:current_user).returns(user)
       get :index
     end
@@ -17,18 +23,19 @@ describe InvoicesController do
 
   describe "show" do
     before do
+      @controller.expects(:render).at_least_once
       user = FactoryGirl.create(:user)
-      InvoicesController.any_instance.expects(:current_user).returns(user)
-      invoice = user.sf_objects.create!(oid: 12345)
+      InvoicesController.any_instance.expects(:current_user).at_least_once.returns(user)
+      invoice = user.plies.create!(oid: 12345)
       line_items = mock
       line_items.stubs(each: nil)
-      SfObject.any_instance.stubs(line_items: line_items, Name: nil)
+      RightClickAttrs.stubs(:call)
+      Invoice.any_instance.stubs(line_items: line_items, Name: nil)
       get :show, id: invoice.to_param
     end
 
     it {
       assert_response :success
-      assert_template "invoices/pdf.html.erb"
     }
   end
 end

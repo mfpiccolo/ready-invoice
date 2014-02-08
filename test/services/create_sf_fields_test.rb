@@ -5,7 +5,13 @@ describe CreateSfFields do
   describe "#call", :vcr do
     describe "with user passed" do
       before do
-        @user = FactoryGirl.create(:user, uid: "123", model_names: ["Invoice__c", "Line_Item__c", "Merchandise__c"])
+        @user = FactoryGirl.create(
+          :user,
+          uid: "123",
+          invoice_api_name: "Invoice__c",
+          line_item_api_name: "Line_Item__c",
+          other_model_names: ["Merchandise__c"]
+        )
       end
 
       it "should return the ply instance" do
