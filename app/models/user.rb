@@ -52,7 +52,9 @@ class User < ActiveRecord::Base
   end
 
   def model_names
-    ([invoice_api_name, line_item_api_name] + other_model_names).compact
+    unless other_model_names.nil?
+      ([invoice_api_name, line_item_api_name] + other_model_names).compact
+    end
   end
 
   # Overwrites setter because controller might send blanks in array
