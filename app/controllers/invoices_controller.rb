@@ -19,8 +19,6 @@ class InvoicesController < ApplicationController
 
     gon.rc_attrs = RightClickAttrs.(current_user.id, @invoice.id)
 
-    gon.li_attrs = { line_items: @line_items.first.data.keys.to_s }
-
     gon.invoice = @invoice.as_json
 
     respond_to do |format|
