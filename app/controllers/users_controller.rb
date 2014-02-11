@@ -29,6 +29,10 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:provider, :uid, :name, :email, :role_ids, :username, :password, :security_token, model_names: [])
+    params.require(:user).permit(
+      :provider, :uid, :name, :email, :role_ids,
+      :username, :password, :security_token, :invoice_api_name,
+      :line_item_api_name, :other_model_names
+    )
   end
 end

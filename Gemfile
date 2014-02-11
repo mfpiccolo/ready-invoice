@@ -100,10 +100,12 @@ group :test do
   gem "launchy",                 "~> 2.3.0"
   gem "minitest-capybara",       "~> 0.4.1"
   gem "minispec-metadata", "~> 2.0.0"
+  gem "capybara-mechanize"
   gem "capybara_minitest_spec",  "~> 1.0.0"
-  gem "poltergeist",             "~> 1.3.0"
+  gem "poltergeist"
   gem "database_cleaner",        "~> 1.0.1"
   gem "webmock",                 "~> 1.8.0"
+  gem 'selenium-webdriver'
 end
 
 #Testing, Where in a highly opinionated list of Gems is included:

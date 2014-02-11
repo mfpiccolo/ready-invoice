@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140131172952) do
+ActiveRecord::Schema.define(version: 20140211021924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,35 +67,6 @@ ActiveRecord::Schema.define(version: 20140131172952) do
     t.integer  "user_id"
     t.string   "models",     default: [], array: true
     t.json     "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sf_models", force: true do |t|
-    t.integer  "salesforce_id"
-    t.string   "model_name"
-    t.json     "records"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sf_object_relations", force: true do |t|
-    t.integer  "parent_id"
-    t.string   "parent_type"
-    t.integer  "child_id"
-    t.string   "child_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sf_objects", force: true do |t|
-    t.integer  "user_id"
-    t.string   "oid"
-    t.string   "otype"
-    t.json     "data"
-    t.hstore   "ohash"
-    t.datetime "last_modified"
-    t.datetime "last_checked"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
