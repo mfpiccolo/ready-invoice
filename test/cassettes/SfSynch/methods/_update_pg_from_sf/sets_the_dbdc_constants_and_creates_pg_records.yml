@@ -1,0 +1,448 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token?client_id=3MVG9A2kN3Bn17hvugFcYc0B.vGBBRSd7xw7_xDwrml5zry8S9rteLT_vsWQf3XA2jcznwwpzh5WBr1bN5WMP&client_secret=826682111161954853&grant_type=password&password=Dummypass1RAc4iyL0fiagVgPwqgevwhNdh&username=dummyguytest@gmail.com
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:56 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":"https://login.salesforce.com/id/00Di0000000j4jrEAA/005i0000002glV1AAI","issued_at":"1392362216559","instance_url":"https://na15.salesforce.com","signature":"Rqp2MgWaHwFPg6SgxnbAM/+nCYKnGRAV9Zx6/hKw8ak=","access_token":"00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B"}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:56 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/Soap/u/24.0
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8" ?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">  <env:Body>    <n1:login
+        xmlns:n1="urn:partner.soap.sforce.com">      <n1:username>dummyguytest@gmail.com</n1:username>      <n1:password>Dummypass1RAc4iyL0fiagVgPwqgevwhNdh</n1:password>    </n1:login>  </env:Body></env:Envelope>
+    headers:
+      Content-Type:
+      - text/xml; charset=utf-8
+      Soapaction:
+      - login
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:56 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '784'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns="urn:partner.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><loginResponse><result><metadataServerUrl>https://na15.salesforce.com/services/Soap/m/24.0/00Di0000000j4jr</metadataServerUrl><passwordExpired>false</passwordExpired><sandbox>false</sandbox><serverUrl>https://na15.salesforce.com/services/Soap/u/24.0/00Di0000000j4jr</serverUrl><sessionId>00Di0000000j4jr!ARAAQKlJ6f.UIcWUbtpPMYvJhdKjaSDNuui1HyPFXzGWqMK2zokcjRF5OO5AwV_RJEZH2Y4bGnPUVVYMbX7QaDJOZ.nkmt7Q</sessionId><userId>005i0000002glV1AAI</userId><userInfo><accessibilityMode>false</accessibilityMode><currencySymbol>$</currencySymbol><orgAttachmentFileSizeLimit>5242880</orgAttachmentFileSizeLimit><orgDefaultCurrencyIsoCode>USD</orgDefaultCurrencyIsoCode><orgDisallowHtmlAttachments>false</orgDisallowHtmlAttachments><orgHasPersonAccounts>false</orgHasPersonAccounts><organizationId>00Di0000000j4jrEAA</organizationId><organizationMultiCurrency>false</organizationMultiCurrency><organizationName>undefined</organizationName><profileId>00ei0000001D2mRAAS</profileId><roleId
+        xsi:nil="true"/><sessionSecondsValid>7200</sessionSecondsValid><userDefaultCurrencyIsoCode
+        xsi:nil="true"/><userEmail>dummyguytest@gmail.com</userEmail><userFullName>Dummy
+        Guy</userFullName><userId>005i0000002glV1AAI</userId><userLanguage>en_US</userLanguage><userLocale>en_US</userLocale><userName>dummyguytest@gmail.com</userName><userTimeZone>America/Los_Angeles</userTimeZone><userType>Standard</userType><userUiSkin>Theme3</userUiSkin></userInfo></result></loginResponse></soapenv:Body></soapenv:Envelope>
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:57 GMT
+- request:
+    method: get
+    uri: https://na15.salesforce.com/services/data/v22.0/query?q=SELECT%20Id,OwnerId,IsDeleted,Name,CreatedDate,CreatedById,LastModifiedDate,LastModifiedById,SystemModstamp,Status__c,PDF_Link__c,Invoice_Total__c%20FROM%20Invoice__c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - OAuth 00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:57 GMT
+      Sforce-Limit-Info:
+      - api-usage=240/5000
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"totalSize":3,"done":true,"records":[{"attributes":{"type":"Invoice__c","url":"/services/data/v22.0/sobjects/Invoice__c/a01i000000A5BalAAF"},"Id":"a01i000000A5BalAAF","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"INV-001","CreatedDate":"2014-01-28T05:11:25.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-02-14T07:16:53.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-02-14T07:16:53.000+0000","Status__c":"Close","PDF_Link__c":"https://ready-invoice.herokuapp.com/invoices/a01i000000A5BalAAF","Invoice_Total__c":30.0},{"attributes":{"type":"Invoice__c","url":"/services/data/v22.0/sobjects/Invoice__c/a01i000000A5BldAAF"},"Id":"a01i000000A5BldAAF","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"INV-000","CreatedDate":"2014-01-28T05:10:03.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-02-14T07:16:53.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-02-14T07:16:53.000+0000","Status__c":"Open","PDF_Link__c":"https://ready-invoice.herokuapp.com/invoices/a01i000000A5BldAAF","Invoice_Total__c":15.0},{"attributes":{"type":"Invoice__c","url":"/services/data/v22.0/sobjects/Invoice__c/a01i000000A5Bq9AAF"},"Id":"a01i000000A5Bq9AAF","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"INV-002","CreatedDate":"2014-01-28T05:21:26.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-02-14T07:16:53.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-02-14T07:16:53.000+0000","Status__c":"Open","PDF_Link__c":"https://ready-invoice.herokuapp.com/invoices/a01i000000A5Bq9AAF","Invoice_Total__c":2.0}]}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:57 GMT
+- request:
+    method: get
+    uri: https://na15.salesforce.com/services/data/v22.0/query?q=SELECT%20Id,IsDeleted,Name,CreatedDate,CreatedById,LastModifiedDate,LastModifiedById,SystemModstamp,Quantity__c,Invoice__c,Merchandise__c,Unit_Price__c%20FROM%20Line_Item__c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - OAuth 00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:57 GMT
+      Sforce-Limit-Info:
+      - api-usage=240/5000
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"totalSize":4,"done":true,"records":[{"attributes":{"type":"Line_Item__c","url":"/services/data/v22.0/sobjects/Line_Item__c/a02i000000BoTgNAAV"},"Id":"a02i000000BoTgNAAV","IsDeleted":false,"Name":"1","CreatedDate":"2014-01-28T05:22:27.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T06:42:20.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T06:42:20.000+0000","Quantity__c":2.0,"Invoice__c":"a01i000000A5Bq9AAF","Merchandise__c":"a00i000000GrezoAAB","Unit_Price__c":50.0},{"attributes":{"type":"Line_Item__c","url":"/services/data/v22.0/sobjects/Line_Item__c/a02i000000BoTgrAAF"},"Id":"a02i000000BoTgrAAF","IsDeleted":false,"Name":"2","CreatedDate":"2014-01-28T05:29:02.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T06:41:50.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T06:41:50.000+0000","Quantity__c":30.0,"Invoice__c":"a01i000000A5BalAAF","Merchandise__c":"a00i000000Grll4AAB","Unit_Price__c":20.0},{"attributes":{"type":"Line_Item__c","url":"/services/data/v22.0/sobjects/Line_Item__c/a02i000000BoTh6AAF"},"Id":"a02i000000BoTh6AAF","IsDeleted":false,"Name":"3","CreatedDate":"2014-01-28T05:29:35.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T06:42:08.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T06:42:08.000+0000","Quantity__c":10.0,"Invoice__c":"a01i000000A5BldAAF","Merchandise__c":"a00i000000GrleYAAR","Unit_Price__c":30.0},{"attributes":{"type":"Line_Item__c","url":"/services/data/v22.0/sobjects/Line_Item__c/a02i000000Bor5hAAB"},"Id":"a02i000000Bor5hAAB","IsDeleted":false,"Name":"Blah","CreatedDate":"2014-01-29T04:11:56.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-29T04:11:56.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-29T04:11:56.000+0000","Quantity__c":5.0,"Invoice__c":"a01i000000A5BldAAF","Merchandise__c":"a00i000000GrezoAAB","Unit_Price__c":null}]}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:57 GMT
+- request:
+    method: get
+    uri: https://na15.salesforce.com/services/data/v22.0/query?q=SELECT%20Id,OwnerId,IsDeleted,Name,CreatedDate,CreatedById,LastModifiedDate,LastModifiedById,SystemModstamp,LastActivityDate,Price__c,Quantity__c%20FROM%20Merchandise__c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - OAuth 00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:58 GMT
+      Sforce-Limit-Info:
+      - api-usage=239/5000
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"totalSize":4,"done":true,"records":[{"attributes":{"type":"Merchandise__c","url":"/services/data/v22.0/sobjects/Merchandise__c/a00i000000GrleYAAR"},"Id":"a00i000000GrleYAAR","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"E-reader","CreatedDate":"2014-01-28T01:58:34.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T01:58:34.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T01:58:34.000+0000","LastActivityDate":null,"Price__c":100.0,"Quantity__c":1500.0},{"attributes":{"type":"Merchandise__c","url":"/services/data/v22.0/sobjects/Merchandise__c/a00i000000GrezoAAB"},"Id":"a00i000000GrezoAAB","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"Laptop","CreatedDate":"2014-01-28T01:48:49.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T01:56:42.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T01:56:42.000+0000","LastActivityDate":null,"Price__c":500.0,"Quantity__c":1000.0},{"attributes":{"type":"Merchandise__c","url":"/services/data/v22.0/sobjects/Merchandise__c/a00i000000Grll4AAB"},"Id":"a00i000000Grll4AAB","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"Desktop","CreatedDate":"2014-01-28T01:58:52.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T01:58:52.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T01:58:52.000+0000","LastActivityDate":null,"Price__c":1000.0,"Quantity__c":500.0},{"attributes":{"type":"Merchandise__c","url":"/services/data/v22.0/sobjects/Merchandise__c/a00i000000GrloXAAR"},"Id":"a00i000000GrloXAAR","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"Tablet","CreatedDate":"2014-01-28T01:59:05.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T01:59:05.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T01:59:05.000+0000","LastActivityDate":null,"Price__c":300.0,"Quantity__c":5000.0}]}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:58 GMT
+- request:
+    method: post
+    uri: https://na15.salesforce.com/services/async/24.0/job
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8" ?><jobInfo xmlns="http://www.force.com/2009/06/asyncapi/dataload"><operation>update</operation><object>Invoice__c</object><contentType>CSV</contentType></jobInfo>
+    headers:
+      Content-Type:
+      - application/xml; charset=utf-8
+      X-Sfdc-Session:
+      - 00Di0000000j4jr!ARAAQKlJ6f.UIcWUbtpPMYvJhdKjaSDNuui1HyPFXzGWqMK2zokcjRF5OO5AwV_RJEZH2Y4bGnPUVVYMbX7QaDJOZ.nkmt7Q
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:59 GMT
+      Location:
+      - /services/async/24.0/job/750i0000000qMPcAAM
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?><jobInfo
+           xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+         <id>750i0000000qMPcAAM</id>
+         <operation>update</operation>
+         <object>Invoice__c</object>
+         <createdById>005i0000002glV1AAI</createdById>
+         <createdDate>2014-02-14T07:16:59.000Z</createdDate>
+         <systemModstamp>2014-02-14T07:16:59.000Z</systemModstamp>
+         <state>Open</state>
+         <concurrencyMode>Parallel</concurrencyMode>
+         <contentType>CSV</contentType>
+         <numberBatchesQueued>0</numberBatchesQueued>
+         <numberBatchesInProgress>0</numberBatchesInProgress>
+         <numberBatchesCompleted>0</numberBatchesCompleted>
+         <numberBatchesFailed>0</numberBatchesFailed>
+         <numberBatchesTotal>0</numberBatchesTotal>
+         <numberRecordsProcessed>0</numberRecordsProcessed>
+         <numberRetries>0</numberRetries>
+         <apiVersion>24.0</apiVersion>
+         <numberRecordsFailed>0</numberRecordsFailed>
+         <totalProcessingTime>0</totalProcessingTime>
+         <apiActiveProcessingTime>0</apiActiveProcessingTime>
+         <apexProcessingTime>0</apexProcessingTime>
+        </jobInfo>
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:59 GMT
+- request:
+    method: post
+    uri: https://na15.salesforce.com/services/async/24.0/job/750i0000000qMPcAAM/batch/
+    body:
+      encoding: UTF-8
+      string: |
+        Id,PDF_Link__c
+        a01i000000A5BalAAF,https://ready-invoice.herokuapp.com/invoices/a01i000000A5BalAAF
+        a01i000000A5BldAAF,https://ready-invoice.herokuapp.com/invoices/a01i000000A5BldAAF
+        a01i000000A5Bq9AAF,https://ready-invoice.herokuapp.com/invoices/a01i000000A5Bq9AAF
+        a02i000000BoTgNAAV,https://ready-invoice.herokuapp.com/invoices/a02i000000BoTgNAAV
+        a02i000000BoTgrAAF,https://ready-invoice.herokuapp.com/invoices/a02i000000BoTgrAAF
+        a02i000000BoTh6AAF,https://ready-invoice.herokuapp.com/invoices/a02i000000BoTh6AAF
+        a02i000000Bor5hAAB,https://ready-invoice.herokuapp.com/invoices/a02i000000Bor5hAAB
+        a00i000000GrleYAAR,https://ready-invoice.herokuapp.com/invoices/a00i000000GrleYAAR
+        a00i000000GrezoAAB,https://ready-invoice.herokuapp.com/invoices/a00i000000GrezoAAB
+        a00i000000Grll4AAB,https://ready-invoice.herokuapp.com/invoices/a00i000000Grll4AAB
+        a00i000000GrloXAAR,https://ready-invoice.herokuapp.com/invoices/a00i000000GrloXAAR
+    headers:
+      Content-Type:
+      - text/csv; charset=UTF-8
+      X-Sfdc-Session:
+      - 00Di0000000j4jr!ARAAQKlJ6f.UIcWUbtpPMYvJhdKjaSDNuui1HyPFXzGWqMK2zokcjRF5OO5AwV_RJEZH2Y4bGnPUVVYMbX7QaDJOZ.nkmt7Q
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:59 GMT
+      Location:
+      - /services/async/24.0/job/750i0000000qMPcAAM/batch/751i0000000zmk0AAA
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?><batchInfo
+           xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+         <id>751i0000000zmk0AAA</id>
+         <jobId>750i0000000qMPcAAM</jobId>
+         <state>Queued</state>
+         <createdDate>2014-02-14T07:17:00.000Z</createdDate>
+         <systemModstamp>2014-02-14T07:17:00.000Z</systemModstamp>
+         <numberRecordsProcessed>0</numberRecordsProcessed>
+         <numberRecordsFailed>0</numberRecordsFailed>
+         <totalProcessingTime>0</totalProcessingTime>
+         <apiActiveProcessingTime>0</apiActiveProcessingTime>
+         <apexProcessingTime>0</apexProcessingTime>
+        </batchInfo>
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:17:00 GMT
+- request:
+    method: post
+    uri: https://na15.salesforce.com/services/async/24.0/job/750i0000000qMPcAAM
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8" ?><jobInfo xmlns="http://www.force.com/2009/06/asyncapi/dataload"><state>Closed</state></jobInfo>
+    headers:
+      Content-Type:
+      - application/xml; charset=utf-8
+      X-Sfdc-Session:
+      - 00Di0000000j4jr!ARAAQKlJ6f.UIcWUbtpPMYvJhdKjaSDNuui1HyPFXzGWqMK2zokcjRF5OO5AwV_RJEZH2Y4bGnPUVVYMbX7QaDJOZ.nkmt7Q
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:17:00 GMT
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?><jobInfo
+           xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+         <id>750i0000000qMPcAAM</id>
+         <operation>update</operation>
+         <object>Invoice__c</object>
+         <createdById>005i0000002glV1AAI</createdById>
+         <createdDate>2014-02-14T07:16:59.000Z</createdDate>
+         <systemModstamp>2014-02-14T07:16:59.000Z</systemModstamp>
+         <state>Closed</state>
+         <concurrencyMode>Parallel</concurrencyMode>
+         <contentType>CSV</contentType>
+         <numberBatchesQueued>0</numberBatchesQueued>
+         <numberBatchesInProgress>0</numberBatchesInProgress>
+         <numberBatchesCompleted>1</numberBatchesCompleted>
+         <numberBatchesFailed>0</numberBatchesFailed>
+         <numberBatchesTotal>1</numberBatchesTotal>
+         <numberRecordsProcessed>11</numberRecordsProcessed>
+         <numberRetries>0</numberRetries>
+         <apiVersion>24.0</apiVersion>
+         <numberRecordsFailed>8</numberRecordsFailed>
+         <totalProcessingTime>91</totalProcessingTime>
+         <apiActiveProcessingTime>35</apiActiveProcessingTime>
+         <apexProcessingTime>0</apexProcessingTime>
+        </jobInfo>
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:17:00 GMT
+- request:
+    method: get
+    uri: https://na15.salesforce.com/services/data/v22.0/query?q=SELECT%20Id,OwnerId,IsDeleted,Name,CreatedDate,CreatedById,LastModifiedDate,LastModifiedById,SystemModstamp,Status__c,PDF_Link__c,Invoice_Total__c%20FROM%20Invoice__c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - OAuth 00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:17:01 GMT
+      Sforce-Limit-Info:
+      - api-usage=242/5000
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"totalSize":3,"done":true,"records":[{"attributes":{"type":"Invoice__c","url":"/services/data/v22.0/sobjects/Invoice__c/a01i000000A5BalAAF"},"Id":"a01i000000A5BalAAF","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"INV-001","CreatedDate":"2014-01-28T05:11:25.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-02-14T07:17:00.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-02-14T07:17:00.000+0000","Status__c":"Close","PDF_Link__c":"https://ready-invoice.herokuapp.com/invoices/a01i000000A5BalAAF","Invoice_Total__c":30.0},{"attributes":{"type":"Invoice__c","url":"/services/data/v22.0/sobjects/Invoice__c/a01i000000A5BldAAF"},"Id":"a01i000000A5BldAAF","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"INV-000","CreatedDate":"2014-01-28T05:10:03.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-02-14T07:17:00.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-02-14T07:17:00.000+0000","Status__c":"Open","PDF_Link__c":"https://ready-invoice.herokuapp.com/invoices/a01i000000A5BldAAF","Invoice_Total__c":15.0},{"attributes":{"type":"Invoice__c","url":"/services/data/v22.0/sobjects/Invoice__c/a01i000000A5Bq9AAF"},"Id":"a01i000000A5Bq9AAF","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"INV-002","CreatedDate":"2014-01-28T05:21:26.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-02-14T07:17:00.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-02-14T07:17:00.000+0000","Status__c":"Open","PDF_Link__c":"https://ready-invoice.herokuapp.com/invoices/a01i000000A5Bq9AAF","Invoice_Total__c":2.0}]}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:17:01 GMT
+- request:
+    method: get
+    uri: https://na15.salesforce.com/services/data/v22.0/query?q=SELECT%20Id,IsDeleted,Name,CreatedDate,CreatedById,LastModifiedDate,LastModifiedById,SystemModstamp,Quantity__c,Invoice__c,Merchandise__c,Unit_Price__c%20FROM%20Line_Item__c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - OAuth 00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:17:01 GMT
+      Sforce-Limit-Info:
+      - api-usage=241/5000
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"totalSize":4,"done":true,"records":[{"attributes":{"type":"Line_Item__c","url":"/services/data/v22.0/sobjects/Line_Item__c/a02i000000BoTgNAAV"},"Id":"a02i000000BoTgNAAV","IsDeleted":false,"Name":"1","CreatedDate":"2014-01-28T05:22:27.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T06:42:20.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T06:42:20.000+0000","Quantity__c":2.0,"Invoice__c":"a01i000000A5Bq9AAF","Merchandise__c":"a00i000000GrezoAAB","Unit_Price__c":50.0},{"attributes":{"type":"Line_Item__c","url":"/services/data/v22.0/sobjects/Line_Item__c/a02i000000BoTgrAAF"},"Id":"a02i000000BoTgrAAF","IsDeleted":false,"Name":"2","CreatedDate":"2014-01-28T05:29:02.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T06:41:50.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T06:41:50.000+0000","Quantity__c":30.0,"Invoice__c":"a01i000000A5BalAAF","Merchandise__c":"a00i000000Grll4AAB","Unit_Price__c":20.0},{"attributes":{"type":"Line_Item__c","url":"/services/data/v22.0/sobjects/Line_Item__c/a02i000000BoTh6AAF"},"Id":"a02i000000BoTh6AAF","IsDeleted":false,"Name":"3","CreatedDate":"2014-01-28T05:29:35.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T06:42:08.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T06:42:08.000+0000","Quantity__c":10.0,"Invoice__c":"a01i000000A5BldAAF","Merchandise__c":"a00i000000GrleYAAR","Unit_Price__c":30.0},{"attributes":{"type":"Line_Item__c","url":"/services/data/v22.0/sobjects/Line_Item__c/a02i000000Bor5hAAB"},"Id":"a02i000000Bor5hAAB","IsDeleted":false,"Name":"Blah","CreatedDate":"2014-01-29T04:11:56.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-29T04:11:56.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-29T04:11:56.000+0000","Quantity__c":5.0,"Invoice__c":"a01i000000A5BldAAF","Merchandise__c":"a00i000000GrezoAAB","Unit_Price__c":null}]}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:17:01 GMT
+- request:
+    method: get
+    uri: https://na15.salesforce.com/services/data/v22.0/query?q=SELECT%20Id,OwnerId,IsDeleted,Name,CreatedDate,CreatedById,LastModifiedDate,LastModifiedById,SystemModstamp,LastActivityDate,Price__c,Quantity__c%20FROM%20Merchandise__c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - OAuth 00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:17:02 GMT
+      Sforce-Limit-Info:
+      - api-usage=242/5000
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"totalSize":4,"done":true,"records":[{"attributes":{"type":"Merchandise__c","url":"/services/data/v22.0/sobjects/Merchandise__c/a00i000000GrleYAAR"},"Id":"a00i000000GrleYAAR","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"E-reader","CreatedDate":"2014-01-28T01:58:34.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T01:58:34.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T01:58:34.000+0000","LastActivityDate":null,"Price__c":100.0,"Quantity__c":1500.0},{"attributes":{"type":"Merchandise__c","url":"/services/data/v22.0/sobjects/Merchandise__c/a00i000000GrezoAAB"},"Id":"a00i000000GrezoAAB","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"Laptop","CreatedDate":"2014-01-28T01:48:49.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T01:56:42.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T01:56:42.000+0000","LastActivityDate":null,"Price__c":500.0,"Quantity__c":1000.0},{"attributes":{"type":"Merchandise__c","url":"/services/data/v22.0/sobjects/Merchandise__c/a00i000000Grll4AAB"},"Id":"a00i000000Grll4AAB","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"Desktop","CreatedDate":"2014-01-28T01:58:52.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T01:58:52.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T01:58:52.000+0000","LastActivityDate":null,"Price__c":1000.0,"Quantity__c":500.0},{"attributes":{"type":"Merchandise__c","url":"/services/data/v22.0/sobjects/Merchandise__c/a00i000000GrloXAAR"},"Id":"a00i000000GrloXAAR","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"Tablet","CreatedDate":"2014-01-28T01:59:05.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T01:59:05.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T01:59:05.000+0000","LastActivityDate":null,"Price__c":300.0,"Quantity__c":5000.0}]}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:17:02 GMT
+recorded_with: VCR 2.8.0

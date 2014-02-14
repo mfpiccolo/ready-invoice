@@ -85,7 +85,7 @@ group :development, :test do
   gem "pry",                     "~> 0.9.12.2"
   gem "pry-debugger",            "~> 0.2.2"
   gem "vcr"
-  gem "minitest-vcr",            "~> 0.0.2"
+  gem "minitest-vcr",            "~> 0.1.0"
   gem "dotenv"
 end
 
@@ -103,7 +103,6 @@ group :test do
   gem "capybara-mechanize"
   gem "capybara_minitest_spec",  "~> 1.0.0"
   gem "poltergeist"
-  gem "database_cleaner",        "~> 1.0.1"
   gem "webmock",                 "~> 1.8.0"
   gem 'selenium-webdriver'
 end
