@@ -5,7 +5,7 @@ describe FindInvoice do
     describe "with user and invoice_oid passed" do
       before do
         @user = FactoryGirl.create(:user)
-        @invoice = @user.plies.create(otype: "Invoice__c")
+        @invoice = @user.invoices.create(otype: "Invoice__c")
       end
 
       it "should return the ply instance" do
