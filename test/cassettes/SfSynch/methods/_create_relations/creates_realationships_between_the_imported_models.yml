@@ -1,0 +1,492 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token?client_id=3MVG9A2kN3Bn17hvugFcYc0B.vGBBRSd7xw7_xDwrml5zry8S9rteLT_vsWQf3XA2jcznwwpzh5WBr1bN5WMP&client_secret=826682111161954853&grant_type=password&password=Dummypass1RAc4iyL0fiagVgPwqgevwhNdh&username=dummyguytest@gmail.com
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:35 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":"https://login.salesforce.com/id/00Di0000000j4jrEAA/005i0000002glV1AAI","issued_at":"1392362195933","instance_url":"https://na15.salesforce.com","signature":"WCwRt7Z9eTv+DbXY5WEULpe0P8dwyMyaea4qyt6cO0s=","access_token":"00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B"}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:35 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/Soap/u/24.0
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8" ?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">  <env:Body>    <n1:login
+        xmlns:n1="urn:partner.soap.sforce.com">      <n1:username>dummyguytest@gmail.com</n1:username>      <n1:password>Dummypass1RAc4iyL0fiagVgPwqgevwhNdh</n1:password>    </n1:login>  </env:Body></env:Envelope>
+    headers:
+      Content-Type:
+      - text/xml; charset=utf-8
+      Soapaction:
+      - login
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:36 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '784'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns="urn:partner.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><loginResponse><result><metadataServerUrl>https://na15.salesforce.com/services/Soap/m/24.0/00Di0000000j4jr</metadataServerUrl><passwordExpired>false</passwordExpired><sandbox>false</sandbox><serverUrl>https://na15.salesforce.com/services/Soap/u/24.0/00Di0000000j4jr</serverUrl><sessionId>00Di0000000j4jr!ARAAQKlJ6f.UIcWUbtpPMYvJhdKjaSDNuui1HyPFXzGWqMK2zokcjRF5OO5AwV_RJEZH2Y4bGnPUVVYMbX7QaDJOZ.nkmt7Q</sessionId><userId>005i0000002glV1AAI</userId><userInfo><accessibilityMode>false</accessibilityMode><currencySymbol>$</currencySymbol><orgAttachmentFileSizeLimit>5242880</orgAttachmentFileSizeLimit><orgDefaultCurrencyIsoCode>USD</orgDefaultCurrencyIsoCode><orgDisallowHtmlAttachments>false</orgDisallowHtmlAttachments><orgHasPersonAccounts>false</orgHasPersonAccounts><organizationId>00Di0000000j4jrEAA</organizationId><organizationMultiCurrency>false</organizationMultiCurrency><organizationName>undefined</organizationName><profileId>00ei0000001D2mRAAS</profileId><roleId
+        xsi:nil="true"/><sessionSecondsValid>7200</sessionSecondsValid><userDefaultCurrencyIsoCode
+        xsi:nil="true"/><userEmail>dummyguytest@gmail.com</userEmail><userFullName>Dummy
+        Guy</userFullName><userId>005i0000002glV1AAI</userId><userLanguage>en_US</userLanguage><userLocale>en_US</userLocale><userName>dummyguytest@gmail.com</userName><userTimeZone>America/Los_Angeles</userTimeZone><userType>Standard</userType><userUiSkin>Theme3</userUiSkin></userInfo></result></loginResponse></soapenv:Body></soapenv:Envelope>
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:36 GMT
+- request:
+    method: get
+    uri: https://na15.salesforce.com/services/data/v22.0/sobjects/Invoice__c/describe
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - OAuth 00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:36 GMT
+      Sforce-Limit-Info:
+      - api-usage=222/5000
+      Org.eclipse.jetty.server.include.etag:
+      - e4a93a15
+      Last-Modified:
+      - Tue, 28 Jan 2014 06:41:35 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Etag:
+      - e4a93a1-gzip"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"name":"Invoice__c","fields":[{"length":18,"name":"Id","type":"id","defaultValue":null,"unique":false,"byteLength":18,"label":"Record
+        ID","inlineHelpText":null,"writeRequiresMasterRead":false,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":true,"controllerName":null,"nillable":false,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":true,"referenceTo":[],"relationshipOrder":null,"soapType":"tns:ID","createable":false,"updateable":false,"namePointing":false,"custom":false,"htmlFormatted":false,"dependentPicklist":false},{"length":18,"name":"OwnerId","type":"reference","defaultValue":null,"unique":false,"byteLength":18,"label":"Owner
+        ID","inlineHelpText":null,"writeRequiresMasterRead":false,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":"Owner","externalId":false,"idLookup":false,"controllerName":null,"nillable":false,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":true,"referenceTo":["Group","User"],"relationshipOrder":null,"soapType":"tns:ID","createable":true,"updateable":true,"namePointing":true,"custom":false,"htmlFormatted":false,"dependentPicklist":false},{"length":0,"name":"IsDeleted","type":"boolean","defaultValue":null,"unique":false,"byteLength":0,"label":"Deleted","inlineHelpText":null,"writeRequiresMasterRead":false,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":false,"controllerName":null,"nillable":false,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":true,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:boolean","createable":false,"updateable":false,"namePointing":false,"custom":false,"htmlFormatted":false,"dependentPicklist":false},{"length":80,"name":"Name","type":"string","defaultValue":null,"unique":false,"byteLength":240,"label":"Invoice
+        Name","inlineHelpText":null,"writeRequiresMasterRead":false,"nameField":true,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":true,"controllerName":null,"nillable":false,"autoNumber":true,"picklistValues":[],"deprecatedAndHidden":false,"precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:string","createable":false,"updateable":false,"namePointing":false,"custom":false,"htmlFormatted":false,"dependentPicklist":false},{"length":0,"name":"CreatedDate","type":"datetime","defaultValue":null,"unique":false,"byteLength":0,"label":"Created
+        Date","inlineHelpText":null,"writeRequiresMasterRead":false,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":false,"controllerName":null,"nillable":false,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:dateTime","createable":false,"updateable":false,"namePointing":false,"custom":false,"htmlFormatted":false,"dependentPicklist":false},{"length":18,"name":"CreatedById","type":"reference","defaultValue":null,"unique":false,"byteLength":18,"label":"Created
+        By ID","inlineHelpText":null,"writeRequiresMasterRead":false,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":"CreatedBy","externalId":false,"idLookup":false,"controllerName":null,"nillable":false,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":true,"referenceTo":["User"],"relationshipOrder":null,"soapType":"tns:ID","createable":false,"updateable":false,"namePointing":false,"custom":false,"htmlFormatted":false,"dependentPicklist":false},{"length":0,"name":"LastModifiedDate","type":"datetime","defaultValue":null,"unique":false,"byteLength":0,"label":"Last
+        Modified Date","inlineHelpText":null,"writeRequiresMasterRead":false,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":false,"controllerName":null,"nillable":false,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:dateTime","createable":false,"updateable":false,"namePointing":false,"custom":false,"htmlFormatted":false,"dependentPicklist":false},{"length":18,"name":"LastModifiedById","type":"reference","defaultValue":null,"unique":false,"byteLength":18,"label":"Last
+        Modified By ID","inlineHelpText":null,"writeRequiresMasterRead":false,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":"LastModifiedBy","externalId":false,"idLookup":false,"controllerName":null,"nillable":false,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":true,"referenceTo":["User"],"relationshipOrder":null,"soapType":"tns:ID","createable":false,"updateable":false,"namePointing":false,"custom":false,"htmlFormatted":false,"dependentPicklist":false},{"length":0,"name":"SystemModstamp","type":"datetime","defaultValue":null,"unique":false,"byteLength":0,"label":"System
+        Modstamp","inlineHelpText":null,"writeRequiresMasterRead":false,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":false,"controllerName":null,"nillable":false,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:dateTime","createable":false,"updateable":false,"namePointing":false,"custom":false,"htmlFormatted":false,"dependentPicklist":false},{"length":255,"name":"Status__c","type":"picklist","defaultValue":null,"unique":false,"byteLength":765,"label":"Status","inlineHelpText":"Choose
+        a value from the drop-down list.","writeRequiresMasterRead":false,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":false,"controllerName":null,"nillable":true,"autoNumber":false,"picklistValues":[{"value":"Open","active":true,"label":"Open","defaultValue":true,"validFor":null},{"value":"Close","active":true,"label":"Close","defaultValue":false,"validFor":null},{"value":"Negotiating","active":true,"label":"Negotiating","defaultValue":false,"validFor":null},{"value":"Pending","active":true,"label":"Pending","defaultValue":false,"validFor":null}],"deprecatedAndHidden":false,"precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":false,"digits":0,"groupable":true,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:string","createable":true,"updateable":true,"namePointing":false,"custom":true,"htmlFormatted":false,"dependentPicklist":false},{"length":255,"name":"PDF_Link__c","type":"url","defaultValue":null,"unique":false,"byteLength":765,"label":"PDF
+        Link","inlineHelpText":null,"writeRequiresMasterRead":false,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":false,"controllerName":null,"nillable":true,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":false,"digits":0,"groupable":true,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:string","createable":true,"updateable":true,"namePointing":false,"custom":true,"htmlFormatted":false,"dependentPicklist":false},{"length":0,"name":"Invoice_Total__c","type":"double","defaultValue":null,"unique":false,"byteLength":0,"label":"Invoice_Total","inlineHelpText":null,"writeRequiresMasterRead":false,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":true,"scale":0,"relationshipName":null,"externalId":false,"idLookup":false,"controllerName":null,"nillable":true,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"precision":18,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":false,"digits":0,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:double","createable":false,"updateable":false,"namePointing":false,"custom":true,"htmlFormatted":false,"dependentPicklist":false}],"label":"Invoice","childRelationships":[{"field":"ParentId","cascadeDelete":true,"relationshipName":"Attachments","deprecatedAndHidden":false,"childSObject":"Attachment"},{"field":"LinkedEntityId","cascadeDelete":true,"relationshipName":null,"deprecatedAndHidden":false,"childSObject":"ContentDocumentLink"},{"field":"FirstPublishLocationId","cascadeDelete":false,"relationshipName":null,"deprecatedAndHidden":false,"childSObject":"ContentVersion"},{"field":"ParentId","cascadeDelete":true,"relationshipName":"FeedSubscriptionsForEntity","deprecatedAndHidden":false,"childSObject":"EntitySubscription"},{"field":"ParentId","cascadeDelete":false,"relationshipName":null,"deprecatedAndHidden":false,"childSObject":"FeedComment"},{"field":"ParentId","cascadeDelete":true,"relationshipName":null,"deprecatedAndHidden":false,"childSObject":"FeedItem"},{"field":"Invoice__c","cascadeDelete":true,"relationshipName":"Line_Items__r","deprecatedAndHidden":false,"childSObject":"Line_Item__c"},{"field":"ParentId","cascadeDelete":true,"relationshipName":null,"deprecatedAndHidden":false,"childSObject":"NewsFeed"},{"field":"ParentId","cascadeDelete":true,"relationshipName":"Notes","deprecatedAndHidden":false,"childSObject":"Note"},{"field":"ParentId","cascadeDelete":true,"relationshipName":"NotesAndAttachments","deprecatedAndHidden":false,"childSObject":"NoteAndAttachment"},{"field":"TargetObjectId","cascadeDelete":true,"relationshipName":"ProcessInstances","deprecatedAndHidden":false,"childSObject":"ProcessInstance"},{"field":"TargetObjectId","cascadeDelete":false,"relationshipName":"ProcessSteps","deprecatedAndHidden":false,"childSObject":"ProcessInstanceHistory"},{"field":"ParentId","cascadeDelete":true,"relationshipName":null,"deprecatedAndHidden":false,"childSObject":"UserProfileFeed"}],"layoutable":true,"activateable":false,"labelPlural":"Invoices","custom":true,"keyPrefix":"a01","urls":{"uiEditTemplate":"https://na15.salesforce.com/{ID}/e","sobject":"/services/data/v22.0/sobjects/Invoice__c","uiDetailTemplate":"https://na15.salesforce.com/{ID}","describe":"/services/data/v22.0/sobjects/Invoice__c/describe","rowTemplate":"/services/data/v22.0/sobjects/Invoice__c/{ID}","uiNewRecord":"https://na15.salesforce.com/a01/e"},"searchable":true,"customSetting":false,"undeletable":true,"mergeable":false,"replicateable":true,"triggerable":true,"feedEnabled":false,"retrieveable":true,"searchLayoutable":null,"lookupLayoutable":null,"listviewable":null,"deprecatedAndHidden":false,"recordTypeInfos":[{"name":"Master","available":true,"recordTypeId":"012000000000000AAA","defaultRecordTypeMapping":true}],"queryable":true,"createable":true,"deletable":true,"updateable":true}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:36 GMT
+- request:
+    method: get
+    uri: https://na15.salesforce.com/services/data/v22.0/query?q=SELECT%20Id,OwnerId,IsDeleted,Name,CreatedDate,CreatedById,LastModifiedDate,LastModifiedById,SystemModstamp,Status__c,PDF_Link__c,Invoice_Total__c%20FROM%20Invoice__c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - OAuth 00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:37 GMT
+      Sforce-Limit-Info:
+      - api-usage=222/5000
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"totalSize":3,"done":true,"records":[{"attributes":{"type":"Invoice__c","url":"/services/data/v22.0/sobjects/Invoice__c/a01i000000A5BalAAF"},"Id":"a01i000000A5BalAAF","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"INV-001","CreatedDate":"2014-01-28T05:11:25.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-02-14T07:15:32.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-02-14T07:15:32.000+0000","Status__c":"Close","PDF_Link__c":"https://ready-invoice.herokuapp.com/invoices/a01i000000A5BalAAF","Invoice_Total__c":30.0},{"attributes":{"type":"Invoice__c","url":"/services/data/v22.0/sobjects/Invoice__c/a01i000000A5BldAAF"},"Id":"a01i000000A5BldAAF","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"INV-000","CreatedDate":"2014-01-28T05:10:03.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-02-14T07:15:32.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-02-14T07:15:32.000+0000","Status__c":"Open","PDF_Link__c":"https://ready-invoice.herokuapp.com/invoices/a01i000000A5BldAAF","Invoice_Total__c":15.0},{"attributes":{"type":"Invoice__c","url":"/services/data/v22.0/sobjects/Invoice__c/a01i000000A5Bq9AAF"},"Id":"a01i000000A5Bq9AAF","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"INV-002","CreatedDate":"2014-01-28T05:21:26.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-02-14T07:15:32.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-02-14T07:15:32.000+0000","Status__c":"Open","PDF_Link__c":"https://ready-invoice.herokuapp.com/invoices/a01i000000A5Bq9AAF","Invoice_Total__c":2.0}]}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:37 GMT
+- request:
+    method: get
+    uri: https://na15.salesforce.com/services/data/v22.0/sobjects/Line_Item__c/describe
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - OAuth 00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:37 GMT
+      Sforce-Limit-Info:
+      - api-usage=222/5000
+      Org.eclipse.jetty.server.include.etag:
+      - e4a93a15
+      Last-Modified:
+      - Tue, 28 Jan 2014 06:41:35 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Etag:
+      - e4a93a1-gzip"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"name":"Line_Item__c","fields":[{"length":18,"name":"Id","type":"id","defaultValue":null,"byteLength":18,"unique":false,"groupable":true,"referenceTo":[],"relationshipOrder":null,"soapType":"tns:ID","label":"Record
+        ID","precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":true,"nillable":false,"inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"controllerName":null,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"custom":false},{"length":0,"name":"IsDeleted","type":"boolean","defaultValue":null,"byteLength":0,"unique":false,"groupable":true,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:boolean","label":"Deleted","precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":false,"nillable":false,"inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"controllerName":null,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"custom":false},{"length":80,"name":"Name","type":"string","defaultValue":null,"byteLength":240,"unique":false,"groupable":true,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:string","label":"Line_Item
+        Name","precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"nameField":true,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":true,"nillable":true,"inlineHelpText":null,"writeRequiresMasterRead":false,"createable":true,"updateable":true,"controllerName":null,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"custom":false},{"length":0,"name":"CreatedDate","type":"datetime","defaultValue":null,"byteLength":0,"unique":false,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:dateTime","label":"Created
+        Date","precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":false,"nillable":false,"inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"controllerName":null,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"custom":false},{"length":18,"name":"CreatedById","type":"reference","defaultValue":null,"byteLength":18,"unique":false,"groupable":true,"referenceTo":["User"],"relationshipOrder":null,"soapType":"tns:ID","label":"Created
+        By ID","precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":"CreatedBy","externalId":false,"idLookup":false,"nillable":false,"inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"controllerName":null,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"custom":false},{"length":0,"name":"LastModifiedDate","type":"datetime","defaultValue":null,"byteLength":0,"unique":false,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:dateTime","label":"Last
+        Modified Date","precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":false,"nillable":false,"inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"controllerName":null,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"custom":false},{"length":18,"name":"LastModifiedById","type":"reference","defaultValue":null,"byteLength":18,"unique":false,"groupable":true,"referenceTo":["User"],"relationshipOrder":null,"soapType":"tns:ID","label":"Last
+        Modified By ID","precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":"LastModifiedBy","externalId":false,"idLookup":false,"nillable":false,"inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"controllerName":null,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"custom":false},{"length":0,"name":"SystemModstamp","type":"datetime","defaultValue":null,"byteLength":0,"unique":false,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:dateTime","label":"System
+        Modstamp","precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":false,"nillable":false,"inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"controllerName":null,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"custom":false},{"length":0,"name":"Quantity__c","type":"double","defaultValue":null,"byteLength":0,"unique":false,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:double","label":"Quantity","precision":18,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":false,"digits":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":null,"externalId":false,"idLookup":false,"nillable":false,"inlineHelpText":null,"writeRequiresMasterRead":false,"createable":true,"updateable":true,"controllerName":null,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"custom":true},{"length":18,"name":"Invoice__c","type":"reference","defaultValue":null,"byteLength":18,"unique":false,"groupable":true,"referenceTo":["Invoice__c"],"relationshipOrder":0,"soapType":"tns:ID","label":"Invoice","precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":false,"digits":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":"Invoice__r","externalId":false,"idLookup":false,"nillable":false,"inlineHelpText":null,"writeRequiresMasterRead":false,"createable":true,"updateable":false,"controllerName":null,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"custom":true},{"length":18,"name":"Merchandise__c","type":"reference","defaultValue":null,"byteLength":18,"unique":false,"groupable":true,"referenceTo":["Merchandise__c"],"relationshipOrder":null,"soapType":"tns:ID","label":"Merchandise","precision":0,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":false,"digits":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"relationshipName":"Merchandise__r","externalId":false,"idLookup":false,"nillable":true,"inlineHelpText":null,"writeRequiresMasterRead":false,"createable":true,"updateable":true,"controllerName":null,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"custom":true},{"length":0,"name":"Unit_Price__c","type":"currency","defaultValue":null,"byteLength":0,"unique":false,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:double","label":"Unit_Price","precision":18,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":false,"digits":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":2,"relationshipName":null,"externalId":false,"idLookup":false,"nillable":true,"inlineHelpText":null,"writeRequiresMasterRead":false,"createable":true,"updateable":true,"controllerName":null,"autoNumber":false,"picklistValues":[],"deprecatedAndHidden":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"custom":true}],"label":"Line_Item","custom":true,"keyPrefix":"a02","layoutable":true,"activateable":false,"labelPlural":"Line_Items","urls":{"uiEditTemplate":"https://na15.salesforce.com/{ID}/e","sobject":"/services/data/v22.0/sobjects/Line_Item__c","uiDetailTemplate":"https://na15.salesforce.com/{ID}","describe":"/services/data/v22.0/sobjects/Line_Item__c/describe","rowTemplate":"/services/data/v22.0/sobjects/Line_Item__c/{ID}","uiNewRecord":"https://na15.salesforce.com/a02/e"},"searchable":true,"childRelationships":[{"field":"ParentId","childSObject":"Attachment","relationshipName":"Attachments","cascadeDelete":true,"deprecatedAndHidden":false},{"field":"LinkedEntityId","childSObject":"ContentDocumentLink","relationshipName":null,"cascadeDelete":true,"deprecatedAndHidden":false},{"field":"FirstPublishLocationId","childSObject":"ContentVersion","relationshipName":null,"cascadeDelete":false,"deprecatedAndHidden":false},{"field":"ParentId","childSObject":"EntitySubscription","relationshipName":"FeedSubscriptionsForEntity","cascadeDelete":true,"deprecatedAndHidden":false},{"field":"ParentId","childSObject":"FeedComment","relationshipName":null,"cascadeDelete":false,"deprecatedAndHidden":false},{"field":"ParentId","childSObject":"FeedItem","relationshipName":null,"cascadeDelete":true,"deprecatedAndHidden":false},{"field":"ParentId","childSObject":"NewsFeed","relationshipName":null,"cascadeDelete":true,"deprecatedAndHidden":false},{"field":"ParentId","childSObject":"Note","relationshipName":"Notes","cascadeDelete":true,"deprecatedAndHidden":false},{"field":"ParentId","childSObject":"NoteAndAttachment","relationshipName":"NotesAndAttachments","cascadeDelete":true,"deprecatedAndHidden":false},{"field":"TargetObjectId","childSObject":"ProcessInstance","relationshipName":"ProcessInstances","cascadeDelete":true,"deprecatedAndHidden":false},{"field":"TargetObjectId","childSObject":"ProcessInstanceHistory","relationshipName":"ProcessSteps","cascadeDelete":false,"deprecatedAndHidden":false},{"field":"ParentId","childSObject":"UserProfileFeed","relationshipName":null,"cascadeDelete":true,"deprecatedAndHidden":false}],"createable":true,"deletable":true,"updateable":true,"queryable":true,"customSetting":false,"undeletable":true,"mergeable":false,"replicateable":true,"triggerable":true,"feedEnabled":false,"retrieveable":true,"searchLayoutable":null,"lookupLayoutable":null,"listviewable":null,"deprecatedAndHidden":false,"recordTypeInfos":[{"name":"Master","available":true,"recordTypeId":"012000000000000AAA","defaultRecordTypeMapping":true}]}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:37 GMT
+- request:
+    method: get
+    uri: https://na15.salesforce.com/services/data/v22.0/query?q=SELECT%20Id,IsDeleted,Name,CreatedDate,CreatedById,LastModifiedDate,LastModifiedById,SystemModstamp,Quantity__c,Invoice__c,Merchandise__c,Unit_Price__c%20FROM%20Line_Item__c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - OAuth 00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:38 GMT
+      Sforce-Limit-Info:
+      - api-usage=223/5000
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"totalSize":4,"done":true,"records":[{"attributes":{"type":"Line_Item__c","url":"/services/data/v22.0/sobjects/Line_Item__c/a02i000000BoTgNAAV"},"Id":"a02i000000BoTgNAAV","IsDeleted":false,"Name":"1","CreatedDate":"2014-01-28T05:22:27.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T06:42:20.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T06:42:20.000+0000","Quantity__c":2.0,"Invoice__c":"a01i000000A5Bq9AAF","Merchandise__c":"a00i000000GrezoAAB","Unit_Price__c":50.0},{"attributes":{"type":"Line_Item__c","url":"/services/data/v22.0/sobjects/Line_Item__c/a02i000000BoTgrAAF"},"Id":"a02i000000BoTgrAAF","IsDeleted":false,"Name":"2","CreatedDate":"2014-01-28T05:29:02.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T06:41:50.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T06:41:50.000+0000","Quantity__c":30.0,"Invoice__c":"a01i000000A5BalAAF","Merchandise__c":"a00i000000Grll4AAB","Unit_Price__c":20.0},{"attributes":{"type":"Line_Item__c","url":"/services/data/v22.0/sobjects/Line_Item__c/a02i000000BoTh6AAF"},"Id":"a02i000000BoTh6AAF","IsDeleted":false,"Name":"3","CreatedDate":"2014-01-28T05:29:35.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T06:42:08.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T06:42:08.000+0000","Quantity__c":10.0,"Invoice__c":"a01i000000A5BldAAF","Merchandise__c":"a00i000000GrleYAAR","Unit_Price__c":30.0},{"attributes":{"type":"Line_Item__c","url":"/services/data/v22.0/sobjects/Line_Item__c/a02i000000Bor5hAAB"},"Id":"a02i000000Bor5hAAB","IsDeleted":false,"Name":"Blah","CreatedDate":"2014-01-29T04:11:56.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-29T04:11:56.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-29T04:11:56.000+0000","Quantity__c":5.0,"Invoice__c":"a01i000000A5BldAAF","Merchandise__c":"a00i000000GrezoAAB","Unit_Price__c":null}]}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:38 GMT
+- request:
+    method: get
+    uri: https://na15.salesforce.com/services/data/v22.0/sobjects/Merchandise__c/describe
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - OAuth 00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:38 GMT
+      Sforce-Limit-Info:
+      - api-usage=222/5000
+      Org.eclipse.jetty.server.include.etag:
+      - e4a93a15
+      Last-Modified:
+      - Tue, 28 Jan 2014 06:41:35 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Etag:
+      - e4a93a1-gzip"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"name":"Merchandise__c","fields":[{"length":18,"name":"Id","type":"id","defaultValue":null,"byteLength":18,"custom":false,"unique":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"label":"Record
+        ID","precision":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"nillable":false,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":true,"referenceTo":[],"relationshipOrder":null,"soapType":"tns:ID","inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"relationshipName":null,"autoNumber":false,"controllerName":null,"externalId":false,"idLookup":true,"picklistValues":[],"deprecatedAndHidden":false},{"length":18,"name":"OwnerId","type":"reference","defaultValue":null,"byteLength":18,"custom":false,"unique":false,"namePointing":true,"htmlFormatted":false,"dependentPicklist":false,"label":"Owner
+        ID","precision":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"nillable":false,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":true,"referenceTo":["Group","User"],"relationshipOrder":null,"soapType":"tns:ID","inlineHelpText":null,"writeRequiresMasterRead":false,"createable":true,"updateable":true,"relationshipName":"Owner","autoNumber":false,"controllerName":null,"externalId":false,"idLookup":false,"picklistValues":[],"deprecatedAndHidden":false},{"length":0,"name":"IsDeleted","type":"boolean","defaultValue":null,"byteLength":0,"custom":false,"unique":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"label":"Deleted","precision":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"nillable":false,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":true,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:boolean","inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"relationshipName":null,"autoNumber":false,"controllerName":null,"externalId":false,"idLookup":false,"picklistValues":[],"deprecatedAndHidden":false},{"length":80,"name":"Name","type":"string","defaultValue":null,"byteLength":240,"custom":false,"unique":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"label":"Merchandise
+        Name","precision":0,"nameField":true,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"nillable":true,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":true,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:string","inlineHelpText":null,"writeRequiresMasterRead":false,"createable":true,"updateable":true,"relationshipName":null,"autoNumber":false,"controllerName":null,"externalId":false,"idLookup":true,"picklistValues":[],"deprecatedAndHidden":false},{"length":0,"name":"CreatedDate","type":"datetime","defaultValue":null,"byteLength":0,"custom":false,"unique":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"label":"Created
+        Date","precision":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"nillable":false,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:dateTime","inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"relationshipName":null,"autoNumber":false,"controllerName":null,"externalId":false,"idLookup":false,"picklistValues":[],"deprecatedAndHidden":false},{"length":18,"name":"CreatedById","type":"reference","defaultValue":null,"byteLength":18,"custom":false,"unique":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"label":"Created
+        By ID","precision":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"nillable":false,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":true,"referenceTo":["User"],"relationshipOrder":null,"soapType":"tns:ID","inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"relationshipName":"CreatedBy","autoNumber":false,"controllerName":null,"externalId":false,"idLookup":false,"picklistValues":[],"deprecatedAndHidden":false},{"length":0,"name":"LastModifiedDate","type":"datetime","defaultValue":null,"byteLength":0,"custom":false,"unique":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"label":"Last
+        Modified Date","precision":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"nillable":false,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:dateTime","inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"relationshipName":null,"autoNumber":false,"controllerName":null,"externalId":false,"idLookup":false,"picklistValues":[],"deprecatedAndHidden":false},{"length":18,"name":"LastModifiedById","type":"reference","defaultValue":null,"byteLength":18,"custom":false,"unique":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"label":"Last
+        Modified By ID","precision":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"nillable":false,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":true,"referenceTo":["User"],"relationshipOrder":null,"soapType":"tns:ID","inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"relationshipName":"LastModifiedBy","autoNumber":false,"controllerName":null,"externalId":false,"idLookup":false,"picklistValues":[],"deprecatedAndHidden":false},{"length":0,"name":"SystemModstamp","type":"datetime","defaultValue":null,"byteLength":0,"custom":false,"unique":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"label":"System
+        Modstamp","precision":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"nillable":false,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":true,"digits":0,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:dateTime","inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"relationshipName":null,"autoNumber":false,"controllerName":null,"externalId":false,"idLookup":false,"picklistValues":[],"deprecatedAndHidden":false},{"length":0,"name":"LastActivityDate","type":"date","defaultValue":null,"byteLength":0,"custom":false,"unique":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"label":"Last
+        Activity Date","precision":0,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"nillable":true,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":false,"digits":0,"groupable":true,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:date","inlineHelpText":null,"writeRequiresMasterRead":false,"createable":false,"updateable":false,"relationshipName":null,"autoNumber":false,"controllerName":null,"externalId":false,"idLookup":false,"picklistValues":[],"deprecatedAndHidden":false},{"length":0,"name":"Price__c","type":"currency","defaultValue":null,"byteLength":0,"custom":true,"unique":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"label":"Price","precision":18,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":2,"nillable":false,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":false,"digits":0,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:double","inlineHelpText":null,"writeRequiresMasterRead":false,"createable":true,"updateable":true,"relationshipName":null,"autoNumber":false,"controllerName":null,"externalId":false,"idLookup":false,"picklistValues":[],"deprecatedAndHidden":false},{"length":0,"name":"Quantity__c","type":"double","defaultValue":null,"byteLength":0,"custom":true,"unique":false,"namePointing":false,"htmlFormatted":false,"dependentPicklist":false,"label":"Quantity","precision":18,"nameField":false,"sortable":true,"filterable":true,"caseSensitive":false,"restrictedPicklist":false,"calculated":false,"scale":0,"nillable":false,"calculatedFormula":null,"defaultValueFormula":null,"defaultedOnCreate":false,"digits":0,"groupable":false,"referenceTo":[],"relationshipOrder":null,"soapType":"xsd:double","inlineHelpText":null,"writeRequiresMasterRead":false,"createable":true,"updateable":true,"relationshipName":null,"autoNumber":false,"controllerName":null,"externalId":false,"idLookup":false,"picklistValues":[],"deprecatedAndHidden":false}],"label":"Merchandise","searchable":true,"urls":{"uiEditTemplate":"https://na15.salesforce.com/{ID}/e","sobject":"/services/data/v22.0/sobjects/Merchandise__c","uiDetailTemplate":"https://na15.salesforce.com/{ID}","describe":"/services/data/v22.0/sobjects/Merchandise__c/describe","rowTemplate":"/services/data/v22.0/sobjects/Merchandise__c/{ID}","uiNewRecord":"https://na15.salesforce.com/a00/e"},"custom":true,"keyPrefix":"a00","layoutable":true,"activateable":false,"labelPlural":"Merchandise","createable":true,"deletable":true,"updateable":true,"queryable":true,"childRelationships":[{"field":"WhatId","childSObject":"ActivityHistory","relationshipName":"ActivityHistories","deprecatedAndHidden":false,"cascadeDelete":true},{"field":"ParentId","childSObject":"Attachment","relationshipName":"Attachments","deprecatedAndHidden":false,"cascadeDelete":true},{"field":"LinkedEntityId","childSObject":"ContentDocumentLink","relationshipName":null,"deprecatedAndHidden":false,"cascadeDelete":true},{"field":"FirstPublishLocationId","childSObject":"ContentVersion","relationshipName":null,"deprecatedAndHidden":false,"cascadeDelete":false},{"field":"ParentId","childSObject":"EntitySubscription","relationshipName":"FeedSubscriptionsForEntity","deprecatedAndHidden":false,"cascadeDelete":true},{"field":"WhatId","childSObject":"Event","relationshipName":"Events","deprecatedAndHidden":false,"cascadeDelete":true},{"field":"ParentId","childSObject":"FeedComment","relationshipName":null,"deprecatedAndHidden":false,"cascadeDelete":false},{"field":"ParentId","childSObject":"FeedItem","relationshipName":null,"deprecatedAndHidden":false,"cascadeDelete":true},{"field":"Merchandise__c","childSObject":"Line_Item__c","relationshipName":"Line_Items__r","deprecatedAndHidden":false,"cascadeDelete":false},{"field":"ParentId","childSObject":"Merchandise__Feed","relationshipName":"Feeds","deprecatedAndHidden":false,"cascadeDelete":true},{"field":"ParentId","childSObject":"NewsFeed","relationshipName":null,"deprecatedAndHidden":false,"cascadeDelete":true},{"field":"ParentId","childSObject":"Note","relationshipName":"Notes","deprecatedAndHidden":false,"cascadeDelete":true},{"field":"ParentId","childSObject":"NoteAndAttachment","relationshipName":"NotesAndAttachments","deprecatedAndHidden":false,"cascadeDelete":true},{"field":"WhatId","childSObject":"OpenActivity","relationshipName":"OpenActivities","deprecatedAndHidden":false,"cascadeDelete":true},{"field":"TargetObjectId","childSObject":"ProcessInstance","relationshipName":"ProcessInstances","deprecatedAndHidden":false,"cascadeDelete":true},{"field":"TargetObjectId","childSObject":"ProcessInstanceHistory","relationshipName":"ProcessSteps","deprecatedAndHidden":false,"cascadeDelete":false},{"field":"WhatId","childSObject":"Task","relationshipName":"Tasks","deprecatedAndHidden":false,"cascadeDelete":true},{"field":"ParentId","childSObject":"UserProfileFeed","relationshipName":null,"deprecatedAndHidden":false,"cascadeDelete":true}],"customSetting":false,"undeletable":true,"mergeable":false,"replicateable":true,"triggerable":true,"feedEnabled":true,"retrieveable":true,"searchLayoutable":null,"lookupLayoutable":null,"listviewable":null,"deprecatedAndHidden":false,"recordTypeInfos":[{"name":"Master","available":true,"recordTypeId":"012000000000000AAA","defaultRecordTypeMapping":true}]}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:38 GMT
+- request:
+    method: get
+    uri: https://na15.salesforce.com/services/data/v22.0/query?q=SELECT%20Id,OwnerId,IsDeleted,Name,CreatedDate,CreatedById,LastModifiedDate,LastModifiedById,SystemModstamp,LastActivityDate,Price__c,Quantity__c%20FROM%20Merchandise__c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - OAuth 00Di0000000j4jr!ARAAQPEv233uoTFbM4Rp7h_Ia2iiUPHM_9_yPlyxPM3W0KpTeecuyG1_Q1LJqKcGuU6vKxXX6Y_4xC9qK4aXobTQVz61kE2B
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:39 GMT
+      Sforce-Limit-Info:
+      - api-usage=224/5000
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"totalSize":4,"done":true,"records":[{"attributes":{"type":"Merchandise__c","url":"/services/data/v22.0/sobjects/Merchandise__c/a00i000000GrleYAAR"},"Id":"a00i000000GrleYAAR","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"E-reader","CreatedDate":"2014-01-28T01:58:34.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T01:58:34.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T01:58:34.000+0000","LastActivityDate":null,"Price__c":100.0,"Quantity__c":1500.0},{"attributes":{"type":"Merchandise__c","url":"/services/data/v22.0/sobjects/Merchandise__c/a00i000000GrezoAAB"},"Id":"a00i000000GrezoAAB","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"Laptop","CreatedDate":"2014-01-28T01:48:49.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T01:56:42.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T01:56:42.000+0000","LastActivityDate":null,"Price__c":500.0,"Quantity__c":1000.0},{"attributes":{"type":"Merchandise__c","url":"/services/data/v22.0/sobjects/Merchandise__c/a00i000000Grll4AAB"},"Id":"a00i000000Grll4AAB","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"Desktop","CreatedDate":"2014-01-28T01:58:52.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T01:58:52.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T01:58:52.000+0000","LastActivityDate":null,"Price__c":1000.0,"Quantity__c":500.0},{"attributes":{"type":"Merchandise__c","url":"/services/data/v22.0/sobjects/Merchandise__c/a00i000000GrloXAAR"},"Id":"a00i000000GrloXAAR","OwnerId":"005i0000002glV1AAI","IsDeleted":false,"Name":"Tablet","CreatedDate":"2014-01-28T01:59:05.000+0000","CreatedById":"005i0000002glV1AAI","LastModifiedDate":"2014-01-28T01:59:05.000+0000","LastModifiedById":"005i0000002glV1AAI","SystemModstamp":"2014-01-28T01:59:05.000+0000","LastActivityDate":null,"Price__c":300.0,"Quantity__c":5000.0}]}'
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:39 GMT
+- request:
+    method: post
+    uri: https://na15.salesforce.com/services/async/24.0/job
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8" ?><jobInfo xmlns="http://www.force.com/2009/06/asyncapi/dataload"><operation>update</operation><object>Invoice__c</object><contentType>CSV</contentType></jobInfo>
+    headers:
+      Content-Type:
+      - application/xml; charset=utf-8
+      X-Sfdc-Session:
+      - 00Di0000000j4jr!ARAAQKlJ6f.UIcWUbtpPMYvJhdKjaSDNuui1HyPFXzGWqMK2zokcjRF5OO5AwV_RJEZH2Y4bGnPUVVYMbX7QaDJOZ.nkmt7Q
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:39 GMT
+      Location:
+      - /services/async/24.0/job/750i0000000qMQtAAM
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?><jobInfo
+           xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+         <id>750i0000000qMQtAAM</id>
+         <operation>update</operation>
+         <object>Invoice__c</object>
+         <createdById>005i0000002glV1AAI</createdById>
+         <createdDate>2014-02-14T07:16:40.000Z</createdDate>
+         <systemModstamp>2014-02-14T07:16:40.000Z</systemModstamp>
+         <state>Open</state>
+         <concurrencyMode>Parallel</concurrencyMode>
+         <contentType>CSV</contentType>
+         <numberBatchesQueued>0</numberBatchesQueued>
+         <numberBatchesInProgress>0</numberBatchesInProgress>
+         <numberBatchesCompleted>0</numberBatchesCompleted>
+         <numberBatchesFailed>0</numberBatchesFailed>
+         <numberBatchesTotal>0</numberBatchesTotal>
+         <numberRecordsProcessed>0</numberRecordsProcessed>
+         <numberRetries>0</numberRetries>
+         <apiVersion>24.0</apiVersion>
+         <numberRecordsFailed>0</numberRecordsFailed>
+         <totalProcessingTime>0</totalProcessingTime>
+         <apiActiveProcessingTime>0</apiActiveProcessingTime>
+         <apexProcessingTime>0</apexProcessingTime>
+        </jobInfo>
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:40 GMT
+- request:
+    method: post
+    uri: https://na15.salesforce.com/services/async/24.0/job/750i0000000qMQtAAM/batch/
+    body:
+      encoding: UTF-8
+      string: |
+        Id,PDF_Link__c
+        a01i000000A5BalAAF,https://ready-invoice.herokuapp.com/invoices/a01i000000A5BalAAF
+        a01i000000A5BldAAF,https://ready-invoice.herokuapp.com/invoices/a01i000000A5BldAAF
+        a01i000000A5Bq9AAF,https://ready-invoice.herokuapp.com/invoices/a01i000000A5Bq9AAF
+        a02i000000BoTgNAAV,https://ready-invoice.herokuapp.com/invoices/a02i000000BoTgNAAV
+        a02i000000BoTgrAAF,https://ready-invoice.herokuapp.com/invoices/a02i000000BoTgrAAF
+        a02i000000BoTh6AAF,https://ready-invoice.herokuapp.com/invoices/a02i000000BoTh6AAF
+        a02i000000Bor5hAAB,https://ready-invoice.herokuapp.com/invoices/a02i000000Bor5hAAB
+        a00i000000GrleYAAR,https://ready-invoice.herokuapp.com/invoices/a00i000000GrleYAAR
+        a00i000000GrezoAAB,https://ready-invoice.herokuapp.com/invoices/a00i000000GrezoAAB
+        a00i000000Grll4AAB,https://ready-invoice.herokuapp.com/invoices/a00i000000Grll4AAB
+        a00i000000GrloXAAR,https://ready-invoice.herokuapp.com/invoices/a00i000000GrloXAAR
+    headers:
+      Content-Type:
+      - text/csv; charset=UTF-8
+      X-Sfdc-Session:
+      - 00Di0000000j4jr!ARAAQKlJ6f.UIcWUbtpPMYvJhdKjaSDNuui1HyPFXzGWqMK2zokcjRF5OO5AwV_RJEZH2Y4bGnPUVVYMbX7QaDJOZ.nkmt7Q
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:40 GMT
+      Location:
+      - /services/async/24.0/job/750i0000000qMQtAAM/batch/751i0000000zmknAAA
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?><batchInfo
+           xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+         <id>751i0000000zmknAAA</id>
+         <jobId>750i0000000qMQtAAM</jobId>
+         <state>Queued</state>
+         <createdDate>2014-02-14T07:16:40.000Z</createdDate>
+         <systemModstamp>2014-02-14T07:16:40.000Z</systemModstamp>
+         <numberRecordsProcessed>0</numberRecordsProcessed>
+         <numberRecordsFailed>0</numberRecordsFailed>
+         <totalProcessingTime>0</totalProcessingTime>
+         <apiActiveProcessingTime>0</apiActiveProcessingTime>
+         <apexProcessingTime>0</apexProcessingTime>
+        </batchInfo>
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:41 GMT
+- request:
+    method: post
+    uri: https://na15.salesforce.com/services/async/24.0/job/750i0000000qMQtAAM
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8" ?><jobInfo xmlns="http://www.force.com/2009/06/asyncapi/dataload"><state>Closed</state></jobInfo>
+    headers:
+      Content-Type:
+      - application/xml; charset=utf-8
+      X-Sfdc-Session:
+      - 00Di0000000j4jr!ARAAQKlJ6f.UIcWUbtpPMYvJhdKjaSDNuui1HyPFXzGWqMK2zokcjRF5OO5AwV_RJEZH2Y4bGnPUVVYMbX7QaDJOZ.nkmt7Q
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Feb 2014 07:16:41 GMT
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?><jobInfo
+           xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+         <id>750i0000000qMQtAAM</id>
+         <operation>update</operation>
+         <object>Invoice__c</object>
+         <createdById>005i0000002glV1AAI</createdById>
+         <createdDate>2014-02-14T07:16:40.000Z</createdDate>
+         <systemModstamp>2014-02-14T07:16:40.000Z</systemModstamp>
+         <state>Closed</state>
+         <concurrencyMode>Parallel</concurrencyMode>
+         <contentType>CSV</contentType>
+         <numberBatchesQueued>0</numberBatchesQueued>
+         <numberBatchesInProgress>0</numberBatchesInProgress>
+         <numberBatchesCompleted>1</numberBatchesCompleted>
+         <numberBatchesFailed>0</numberBatchesFailed>
+         <numberBatchesTotal>1</numberBatchesTotal>
+         <numberRecordsProcessed>11</numberRecordsProcessed>
+         <numberRetries>0</numberRetries>
+         <apiVersion>24.0</apiVersion>
+         <numberRecordsFailed>8</numberRecordsFailed>
+         <totalProcessingTime>111</totalProcessingTime>
+         <apiActiveProcessingTime>43</apiActiveProcessingTime>
+         <apexProcessingTime>0</apexProcessingTime>
+        </jobInfo>
+    http_version: 
+  recorded_at: Fri, 14 Feb 2014 07:16:41 GMT
+recorded_with: VCR 2.8.0

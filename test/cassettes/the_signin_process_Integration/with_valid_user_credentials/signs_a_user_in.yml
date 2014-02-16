@@ -1,0 +1,221 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://login.salesforce.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.2 (KHTML, like
+        Gecko) Chrome/15.0.853.0 Safari/535.2
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Host:
+      - login.salesforce.com
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 300
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 13 Feb 2014 19:27:53 GMT
+      Content-Type:
+      - text/html;charset=UTF-8
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - DENY
+      Content-Encoding:
+      - gzip
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+        Fbvrp9avSv3EhKfs5OD/XpFwzhUZAAA=
+    http_version: 
+  recorded_at: Thu, 13 Feb 2014 19:27:53 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/
+    body:
+      encoding: UTF-8
+      string: un=&width=&height=&hasRememberUn=true&startURL=&loginURL=&loginType=&useSecure=true&local=&lt=standard&qs=&locale=&oauth_token=&oauth_callback=&login=&serverid=&display=page&username=dummyguytest%40gmail.com&pw=Dummypass1&Login=
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.2 (KHTML, like
+        Gecko) Chrome/15.0.853.0 Safari/535.2
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Host:
+      - login.salesforce.com
+      Referer:
+      - !ruby/object:URI::HTTPS
+        scheme: https
+        user: 
+        password: 
+        host: login.salesforce.com
+        port: 443
+        path: /
+        query: 
+        opaque: 
+        registry: 
+        fragment: 
+        parser: 
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '228'
+      Http-Referer:
+      - https://login.salesforce.com/
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 300
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 13 Feb 2014 19:27:53 GMT
+      Content-Type:
+      - text/html;charset=UTF-8
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - DENY
+      Content-Encoding:
+      - gzip
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+        aBkAAA==
+    http_version: 
+  recorded_at: Thu, 13 Feb 2014 19:27:53 GMT
+recorded_with: VCR 2.8.0

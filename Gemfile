@@ -85,7 +85,7 @@ group :development, :test do
   gem "pry",                     "~> 0.9.12.2"
   gem "pry-debugger",            "~> 0.2.2"
   gem "vcr"
-  gem "minitest-vcr",            "~> 0.0.2"
+  gem "minitest-vcr",            "~> 0.1.0"
   gem "dotenv"
 end
 
@@ -100,10 +100,11 @@ group :test do
   gem "launchy",                 "~> 2.3.0"
   gem "minitest-capybara",       "~> 0.4.1"
   gem "minispec-metadata", "~> 2.0.0"
+  gem "capybara-mechanize"
   gem "capybara_minitest_spec",  "~> 1.0.0"
-  gem "poltergeist",             "~> 1.3.0"
-  gem "database_cleaner",        "~> 1.0.1"
+  gem "poltergeist"
   gem "webmock",                 "~> 1.8.0"
+  gem 'selenium-webdriver'
 end
 
 #Testing, Where in a highly opinionated list of Gems is included:

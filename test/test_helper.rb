@@ -18,14 +18,40 @@ require 'dotenv'
 Dotenv.load ".env.test"
 require File.expand_path("../../config/environment", __FILE__)
 
-require "thincloud-test-rails"
-
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in test/support/ and its subdirectories.
 Dir[File.join("./test/support/**/*.rb")].sort.each { |f| require f }
+
+require "thincloud-test-rails"
+
+require 'capybara/rails'
+
+class IntegrationHelper < MiniTest::Spec
+  include Capybara::DSL
+  include SignInHelper
+
+  after do
+    DatabaseCleaner.clean
+    Capybara.reset_sessions!
+    Capybara.use_default_driver
+  end
+end
+
+MiniTest::Spec.register_spec_type( /Integration$/, IntegrationHelper )
 
 class DummyHelperClass < ActionView::Base
   include Rails.application.routes.url_helpers
 end
 
 MinitestVcr::Spec.configure!
+
+# # Capybar ssl
+# require 'selenium-webdriver'
+# Capybara.default_driver = :selenium
+# Capybara.register_driver :selenium do |app|
+#   http_client = Selenium::WebDriver::Remote::Http::Default.new
+#   http_client.timeout = 180
+#   Capybara::Selenium::Driver.new(app, :browser => :firefox, :http_client => http_client)
+# end
+# Capybara.app_host = "https://localhost:3001"
+
