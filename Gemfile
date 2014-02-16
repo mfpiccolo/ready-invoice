@@ -18,6 +18,8 @@ gem "jquery_context_menu-rails"
 
 gem "gon"
 
+gem "will_paginate"
+
 gem "soft_service", git: "git://github.com/elskwid/soft_service.git"
 
 gem "attr_encrypted"
