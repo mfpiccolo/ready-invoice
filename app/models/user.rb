@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :plies
   has_many :invoices
   has_one :layout
+  has_one :subscription
 
   after_initialize :define_sf_scopes
 

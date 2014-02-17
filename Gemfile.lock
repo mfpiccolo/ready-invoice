@@ -111,6 +111,15 @@ GIT
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
 
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: 218178ea54521728bebc36013c90de908779cbe3
+  specs:
+    stripe (1.10.1)
+      json (~> 1.8.1)
+      mime-types (~> 1.25)
+      rest-client (~> 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -373,6 +382,8 @@ GEM
       ffi (>= 0.5.0)
     responders (1.0.0)
       railties (>= 3.2, < 5)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rolify (3.2.0)
     rspec-core (2.14.7)
     rspec-expectations (2.14.4)
@@ -513,6 +524,7 @@ DEPENDENCIES
   selenium-webdriver
   simple_form
   soft_service!
+  stripe!
   thin (>= 1.5.0)
   thincloud-test!
   thincloud-test-rails!

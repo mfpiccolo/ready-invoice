@@ -24,4 +24,46 @@
 
     <%= f.submit %>
   <% end %>
+
+  <h1>Gold Subscription</h1>
+  <%= form_tag subscriptions_path do %>
+    <%= hidden_field_tag :email, current_user.email %><br>
+    <%= hidden_field_tag :plan_id, 101 %>
+    <script
+      src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+      data-key=<%= Rails.configuration.stripe[:publishable_key] %>
+      data-name="Stripe Tutorial"
+      data-description="Gold"
+      data-currency="usd"
+      data-image="/128x128.png">
+    </script>
+  <% end %>
+
+  <h1>Silver Subscription</h1>
+  <%= form_tag subscriptions_path do %>
+    <%= hidden_field_tag :email, current_user.email %><br>
+    <%= hidden_field_tag :plan_id, 102 %>
+    <script
+      src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+      data-key=<%= Rails.configuration.stripe[:publishable_key] %>
+      data-name="Stripe Tutorial"
+      data-description="Silver"
+      data-currency="usd"
+      data-image="/128x128.png">
+    </script>
+  <% end %>
+
+  <h1>Bronze Subscription</h1>
+  <%= form_tag subscriptions_path do %>
+    <%= hidden_field_tag :email, current_user.email %><br>
+    <%= hidden_field_tag :plan_id, 103 %>
+    <script
+      src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+      data-key=<%= Rails.configuration.stripe[:publishable_key] %>
+      data-name="Stripe Tutorial"
+      data-description="Bronze"
+      data-currency="usd"
+      data-image="/128x128.png">
+    </script>
+  <% end %>
 </div>
