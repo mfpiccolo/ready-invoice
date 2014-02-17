@@ -13,3 +13,18 @@ a.list-group-item{
     height: 60px;
   }
 }
+
+@media (max-width: 992px) {
+  .dashboard-sidebar {
+    width: 60px;
+  }
+  .page-wrapper {
+    padding-left: 61px;
+  }
+}
+
+@media (min-width: 992px) {
+  .page-wrapper {
+    padding-left: 241px;
+  }
+}

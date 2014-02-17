@@ -7953,7 +7953,7 @@ body.dashboard {
   transition: padding-left 100ms;
   position: relative;
   float: right;
-  padding-left: 240px;
+  /*padding-left: 240px;*/
   margin-left: -240px;
   width: 100%;
   z-index: 10;
