@@ -57,7 +57,8 @@ $body-font-family: "Font Awesome", "Helvetica Neue", "Helvetica", Helvetica, Ari
 table {
   background: white;
   margin-bottom: 1.25rem;
-  border: solid 1px #dddddd; }
+  border: solid 1px #dddddd;
+  text-align: left; }
   table thead,
   table tfoot {
     background: whitesmoke;
@@ -67,13 +68,13 @@ table {
     table tfoot tr th,
     table tfoot tr td {
       padding: 0.5rem 0.625rem 0.625rem;
-      font-size: 24px !important;
+      font-size: 18px !important;
       color: #222222;
       text-align: left; }
   table tr th,
   table tr td {
     padding: 0.5625rem 0.625rem;
-    font-size: 24px !important;
+    font-size: 18px !important;
     color: #222222; }
   table tr.even, table tr.alt, table tr:nth-of-type(even) {
     background: #f9f9f9; }

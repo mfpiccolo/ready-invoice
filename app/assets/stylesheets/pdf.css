@@ -1,7 +1,7 @@
 #print {
-  position: absolute;
-  top: 20em;
-  left: .5em;
+  position: fixed;
+  top: 0.5em;
+  left: 17em;
   cursor: pointer;
 }
 

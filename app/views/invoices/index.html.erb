@@ -2,20 +2,20 @@
 
 <table class="table" class="responsive">
   <tr>
+    <th></th>
     <th>Invoice Name</th>
     <th>Total</th>
     <th>Status</th>
-    <th></th>
-    <th></th>
+    <!-- <th></th> -->
   </tr>
 
 <% @invoices.each do |invoice| %>
   <tr class="<%= (invoice.Name == 'Closed Won') ? "success" : "warning"%> ">
+    <td></i><%= link_to invoice_path(invoice) do %><i class="fa fa-pencil-square-o"><% end %></td>
     <td><%= invoice.Name %></td>
     <td><%= invoice.Invoice_Total__c %></td>
     <td><%= invoice.Status__c %></td>
-    <td><%= link_to invoice_path(invoice, format: :pdf) do %><i class="fa fa-print"><% end %></td>
-    <td></i><%= link_to invoice_path(invoice) do %><i class="fa fa-pencil-square-o"><% end %></td>
+    <!-- <td><%#= TODO link_to invoice_path(invoice, format: :pdf) do %><i class="fa fa-print"><%# end %></td> -->
   </tr>
 <% end %>
 </table>
