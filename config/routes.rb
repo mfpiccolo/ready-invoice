@@ -1,4 +1,6 @@
 ReadyInvoice::Application.routes.draw do
+  resources :subscriptions
+
   root :to => "home#index"
   resources :users, :only => [:index, :show, :edit, :update ]
   get '/auth/:provider/callback' => 'sessions#create'

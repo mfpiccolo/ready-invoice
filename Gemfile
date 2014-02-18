@@ -20,6 +20,8 @@ gem "gon"
 
 gem "will_paginate"
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 gem "soft_service", git: "git://github.com/elskwid/soft_service.git"
 
 gem "attr_encrypted"
