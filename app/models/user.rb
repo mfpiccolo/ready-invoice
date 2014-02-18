@@ -53,10 +53,12 @@ class User < ActiveRecord::Base
   end
 
   def model_names
-    if other_model_names.nil?
-      [invoice_api_name, line_item_api_name]
-    else
-      ([invoice_api_name, line_item_api_name] + other_model_names).compact
+    if invoice_api_name.present? && line_item_api_name.present?
+      if other_model_names.nil?
+        [invoice_api_name, line_item_api_name]
+      else
+        ([invoice_api_name, line_item_api_name] + other_model_names).compact
+      end
     end
   end
 

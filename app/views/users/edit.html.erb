@@ -14,13 +14,13 @@
     <%= f.password_field :security_token, value: @user.security_token %>
 
     <%= f.label :invoice_api_name, "Invoice API Name" %>
-    <%= f.text_field :invoice_api_name, value: @user.invoice_api_name %>
+    <%= f.text_field :invoice_api_name %>
 
     <%= f.label :line_item_api_name, "Line Item API Name" %>
-    <%= f.text_field :line_item_api_name, value: @user.line_item_api_name %>
+    <%= f.text_field :line_item_api_name %>
 
-    <%= f.label "other_model_name2", "Other object API Name" %>
-    <%= text_field_tag "user[other_model_names][]", (@user.model_names[2] if @user.model_names.present?), placeholder: 'Enter other object API Name', id: "user_other_model_name2" %>
+    <%= f.label :other_model_names, "Other object API Name" %>
+    <%= f.text_field :other_model_names, name: "user[other_model_names][]" %>
 
     <%= f.submit %>
   <% end %>
