@@ -1,6 +1,7 @@
 <h3>User</h3>
 <p>User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+<%= link_to "Edit", edit_user_path(current_user) %>
 <% if @user.model_names.present? %>
   <p>Invoice object API Name: <%= @user.model_names.first %></p>
   <% @user.model_names.each do |model_name| %>
