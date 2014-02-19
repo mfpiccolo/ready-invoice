@@ -15,8 +15,9 @@ class InvoicesController < ApplicationController
 
   # GET /invoices/1
   def show
-    # Need this because oid could be duplicate from salesforce
-    @line_items = @invoice.line_items.where(user_id: current_user.id)
+    # where needed because oid could be duplicate from salesforce
+    # TODO Move the line_item_api_name to_sym somewhere else
+    @line_items = @invoice.send(current_user.send(:line_item_scope)).where(user_id: current_user.id)
 
     gon.rc_attrs = RightClickAttrs.(current_user.id, @invoice.id)
 

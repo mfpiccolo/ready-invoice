@@ -20,7 +20,8 @@
     <%= f.text_field :line_item_api_name %>
 
     <%= f.label :other_model_names, "Other object API Name" %>
-    <%= f.text_field :other_model_names, name: "user[other_model_names][]", value: @user.other_model_names.first %>
+    <%= f.text_field :other_model_names, name: "user[other_model_names][]",
+      value: (@user.other_model_names.first if @user.other_model_names.present?) %>
 
     <%= f.submit %>
   <% end %>

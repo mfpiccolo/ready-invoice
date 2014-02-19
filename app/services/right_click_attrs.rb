@@ -6,8 +6,8 @@ class RightClickAttrs
   def call
     user = User.find(user_id)
     invoice = user.invoices.where(id: invoice_id).first
-    line_item = invoice.line_items.first
-    merchandise = line_item.merchandises.first
+    line_item = invoice.send(user.line_item_scope).first
+    merchandise = line_item.send(user.other_model_names_scope).first
     {
       "invoice_fold" =>
         { "items" =>

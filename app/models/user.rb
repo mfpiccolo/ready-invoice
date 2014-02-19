@@ -52,6 +52,14 @@ class User < ActiveRecord::Base
     Thread.current[:current_user] = usr
   end
 
+  def line_item_scope
+    sf_class_name_to_scope_name(line_item_api_name).to_sym
+  end
+
+  def other_model_names_scope
+    sf_class_name_to_scope_name(other_model_names.first).to_sym
+  end
+
   def model_names
     if invoice_api_name.present? && line_item_api_name.present?
       if other_model_names.nil?
@@ -76,11 +84,15 @@ class User < ActiveRecord::Base
     # pluralize is not perfect.  ie. Merchandise__c => merchandises
     if model_names.present?
       model_names.each do |name|
-        define_singleton_method(TextHelper.pluralize(name.gsub("__c", "").downcase)) do
+        define_singleton_method(sf_class_name_to_scope_name(name)) do
           plies.where(otype: name)
         end
       end
     end
+  end
+
+  def sf_class_name_to_scope_name(name)
+    TextHelper.pluralize(name.gsub("__c", "").downcase)
   end
 
 end

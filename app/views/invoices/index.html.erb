@@ -12,9 +12,9 @@
 <% @invoices.each do |invoice| %>
   <tr class="<%= (invoice.Name == 'Closed Won') ? "success" : "warning"%> ">
     <td></i><%= link_to invoice_path(invoice) do %><i class="fa fa-pencil-square-o"><% end %></td>
-    <td><%= invoice.Name %></td>
-    <td><%= invoice.Invoice_Total__c %></td>
-    <td><%= invoice.Status__c %></td>
+    <td><%= invoice.try(:Name) %></td>
+    <td><%= invoice.try(:Invoice_Total__c) %></td>
+    <td><%= invoice.try(:Status__c) %></td>
     <td></td>
   </tr>
 <% end %>
