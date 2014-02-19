@@ -1,4 +1,45 @@
-<h1>Home</h1>
-<% @users.each do |user| %>
-  <p>Users: <%=link_to user.name, user %></p>
+<h1>Welcome to Ready Invoice</h1>
+<% if current_user.present? && current_user.subscription.present? %>
+  <h2>Gold Subscription</h2>
+  <%= form_tag subscriptions_path do %>
+    <%= hidden_field_tag :email, current_user.email %><br>
+    <%= hidden_field_tag :plan_id, 101 %>
+    <script
+      src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+      data-key=<%= Rails.configuration.stripe[:publishable_key] %>
+      data-name="Stripe Tutorial"
+      data-description="Gold"
+      data-currency="usd"
+      data-image="/128x128.png">
+    </script>
+  <% end %>
+
+  <h2>Silver Subscription</h2>
+  <%= form_tag subscriptions_path do %>
+    <%= hidden_field_tag :email, current_user.email %><br>
+    <%= hidden_field_tag :plan_id, 102 %>
+    <script
+      src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+      data-key=<%= Rails.configuration.stripe[:publishable_key] %>
+      data-name="Stripe Tutorial"
+      data-description="Silver"
+      data-currency="usd"
+      data-image="/128x128.png">
+    </script>
+  <% end %>
+
+  <h2>Bronze Subscription</h2>
+  <%= form_tag subscriptions_path do %>
+    <%= hidden_field_tag :email, current_user.email %><br>
+    <%= hidden_field_tag :plan_id, 103 %>
+    <script
+      src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+      data-key=<%= Rails.configuration.stripe[:publishable_key] %>
+      data-name="Stripe Tutorial"
+      data-description="Bronze"
+      data-currency="usd"
+      data-image="/128x128.png">
+    </script>
+  <% end %>
+</div>
 <% end %>
