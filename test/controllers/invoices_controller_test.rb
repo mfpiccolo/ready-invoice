@@ -28,6 +28,7 @@ describe InvoicesController do
       InvoicesController.any_instance.expects(:current_user).at_least_once.returns(user)
       invoice = user.invoices.create(oid: 12345, otype: "Invoice__c")
       line_items = mock
+      line_items.stubs(:where)
       line_items.stubs(each: nil)
       RightClickAttrs.stubs(:call)
       Invoice.any_instance.stubs(line_items: line_items, Name: nil)
