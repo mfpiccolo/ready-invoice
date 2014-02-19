@@ -44,6 +44,10 @@
                         <span class="sidebar-label">Users</span>
                       <% end %>
                     <% end %>
+                    <%= link_to user_path(current_user), class: "list-group-item home" do %>
+                      <i class="fa fa-user user-nav-icon icon-dashboard icon-large"></i>
+                      <span class="sidebar-label">Account</span>
+                    <% end %>
                     <%= link_to synch_path, class: "list-group-item home" do %>
                       <i class="fa fa-refresh user-nav-icon icon-dashboard icon-large"></i>
                       <span class="sidebar-label">Refresh Data</span>
